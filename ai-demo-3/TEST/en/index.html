@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI demo 3 - TEST</title>
+  <style>
+* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}body.gjs-outlines-active [data-variable]{outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;outline-offset:-2px;position:relative;}body.gjs-outlines-active [data-variable]::before{content:"${" attr(data-variable) "}";position:absolute;top:-22px;left:0px;background-color:rgb(97, 218, 251);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;text-wrap-mode:nowrap;white-space-collapse:collapse;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}body.gjs-outlines-active [data-variable]{outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;outline-offset:-2px;position:relative;}body.gjs-outlines-active [data-variable]::before{content:"${" attr(data-variable) "}";position:absolute;top:-22px;left:0px;background-color:rgb(97, 218, 251);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;text-wrap-mode:nowrap;white-space-collapse:collapse;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}body.gjs-outlines-active [data-variable]{outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;outline-offset:-2px;position:relative;}body.gjs-outlines-active [data-variable]::before{content:"${" attr(data-variable) "}";position:absolute;top:-22px;left:0px;background-color:rgb(97, 218, 251);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;text-wrap-mode:nowrap;white-space-collapse:collapse;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}body.gjs-outlines-active [data-variable]{outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;outline-offset:-2px;position:relative;}body.gjs-outlines-active [data-variable]::before{content:"${" attr(data-variable) "}";position:absolute;top:-22px;left:0px;background-color:rgb(97, 218, 251);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;text-wrap-mode:nowrap;white-space-collapse:collapse;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}@layer theme{:root, :host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;--color-amber-50:oklch(98.7% 0.022 95.277);--color-amber-100:oklch(96.2% 0.059 95.617);--color-amber-200:oklch(92.4% 0.12 95.746);--color-amber-900:oklch(41.4% 0.112 45.904);--color-yellow-100:oklch(97.3% 0.071 103.193);--color-yellow-200:oklch(94.5% 0.129 101.54);--color-yellow-500:oklch(79.5% 0.184 86.047);--color-yellow-900:oklch(42.1% 0.095 57.708);--color-emerald-50:oklch(97.9% 0.021 166.113);--color-emerald-100:oklch(95% 0.052 163.051);--color-emerald-500:oklch(69.6% 0.17 162.48);--color-emerald-600:oklch(59.6% 0.145 163.225);--color-emerald-700:oklch(50.8% 0.118 165.612);--color-emerald-800:oklch(43.2% 0.095 166.913);--color-gray-50:oklch(98.5% 0.002 247.839);--color-gray-100:oklch(96.7% 0.003 264.542);--color-gray-200:oklch(92.8% 0.006 264.531);--color-gray-400:oklch(70.7% 0.022 261.325);--color-gray-500:oklch(55.1% 0.027 264.364);--color-gray-600:oklch(44.6% 0.03 256.802);--color-gray-700:oklch(37.3% 0.034 259.733);--color-gray-800:oklch(27.8% 0.033 256.848);--color-gray-900:oklch(21% 0.034 264.665);--color-white:#fff;--spacing:0.25rem;--container-3xl:48rem;--container-4xl:56rem;--container-5xl:64rem;--container-6xl:72rem;--text-xs:0.75rem;--text-xs--line-height:calc(1 / 0.75);--text-sm:0.875rem;--text-sm--line-height:calc(1.25 / 0.875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2 / 1.5);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-5xl:3rem;--text-5xl--line-height:1;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--leading-tight:1.25;--radius-md:0.375rem;--radius-lg:0.5rem;--radius-xl:0.75rem;--radius-2xl:1rem;--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);}:root, :host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;--color-amber-50:oklch(98.7% 0.022 95.277);--color-amber-100:oklch(96.2% 0.059 95.617);--color-amber-200:oklch(92.4% 0.12 95.746);--color-amber-900:oklch(41.4% 0.112 45.904);--color-yellow-100:oklch(97.3% 0.071 103.193);--color-yellow-200:oklch(94.5% 0.129 101.54);--color-yellow-500:oklch(79.5% 0.184 86.047);--color-yellow-900:oklch(42.1% 0.095 57.708);--color-emerald-50:oklch(97.9% 0.021 166.113);--color-emerald-100:oklch(95% 0.052 163.051);--color-emerald-500:oklch(69.6% 0.17 162.48);--color-emerald-600:oklch(59.6% 0.145 163.225);--color-emerald-700:oklch(50.8% 0.118 165.612);--color-emerald-800:oklch(43.2% 0.095 166.913);--color-gray-50:oklch(98.5% 0.002 247.839);--color-gray-100:oklch(96.7% 0.003 264.542);--color-gray-200:oklch(92.8% 0.006 264.531);--color-gray-400:oklch(70.7% 0.022 261.325);--color-gray-500:oklch(55.1% 0.027 264.364);--color-gray-600:oklch(44.6% 0.03 256.802);--color-gray-700:oklch(37.3% 0.034 259.733);--color-gray-800:oklch(27.8% 0.033 256.848);--color-gray-900:oklch(21% 0.034 264.665);--color-white:#fff;--spacing:0.25rem;--container-md:28rem;--container-3xl:48rem;--container-4xl:56rem;--container-5xl:64rem;--container-6xl:72rem;--text-xs:0.75rem;--text-xs--line-height:calc(1 / 0.75);--text-sm:0.875rem;--text-sm--line-height:calc(1.25 / 0.875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2 / 1.5);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-5xl:3rem;--text-5xl--line-height:1;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--leading-tight:1.25;--radius-md:0.375rem;--radius-lg:0.5rem;--radius-xl:0.75rem;--radius-2xl:1rem;--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);}:root, :host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;--color-red-50:oklch(97.1% 0.013 17.38);--color-amber-50:oklch(98.7% 0.022 95.277);--color-amber-100:oklch(96.2% 0.059 95.617);--color-amber-200:oklch(92.4% 0.12 95.746);--color-amber-900:oklch(41.4% 0.112 45.904);--color-yellow-100:oklch(97.3% 0.071 103.193);--color-yellow-200:oklch(94.5% 0.129 101.54);--color-yellow-500:oklch(79.5% 0.184 86.047);--color-yellow-900:oklch(42.1% 0.095 57.708);--color-emerald-50:oklch(97.9% 0.021 166.113);--color-emerald-100:oklch(95% 0.052 163.051);--color-emerald-400:oklch(76.5% 0.177 163.223);--color-emerald-500:oklch(69.6% 0.17 162.48);--color-emerald-600:oklch(59.6% 0.145 163.225);--color-emerald-700:oklch(50.8% 0.118 165.612);--color-emerald-800:oklch(43.2% 0.095 166.913);--color-gray-50:oklch(98.5% 0.002 247.839);--color-gray-100:oklch(96.7% 0.003 264.542);--color-gray-200:oklch(92.8% 0.006 264.531);--color-gray-400:oklch(70.7% 0.022 261.325);--color-gray-500:oklch(55.1% 0.027 264.364);--color-gray-600:oklch(44.6% 0.03 256.802);--color-gray-700:oklch(37.3% 0.034 259.733);--color-gray-800:oklch(27.8% 0.033 256.848);--color-gray-900:oklch(21% 0.034 264.665);--color-white:#fff;--spacing:0.25rem;--container-md:28rem;--container-3xl:48rem;--container-4xl:56rem;--container-5xl:64rem;--container-6xl:72rem;--text-xs:0.75rem;--text-xs--line-height:calc(1 / 0.75);--text-sm:0.875rem;--text-sm--line-height:calc(1.25 / 0.875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2 / 1.5);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-5xl:3rem;--text-5xl--line-height:1;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--leading-tight:1.25;--radius-md:0.375rem;--radius-lg:0.5rem;--radius-xl:0.75rem;--radius-2xl:1rem;--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);}}@layer base{*, ::after, ::before, ::backdrop, ::file-selector-button{box-sizing:border-box;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top-width:0px;border-top-style:solid;border-top-color:currentcolor;border-right-width:0px;border-right-style:solid;border-right-color:currentcolor;border-bottom-width:0px;border-bottom-style:solid;border-bottom-color:currentcolor;border-left-width:0px;border-left-style:solid;border-left-color:currentcolor;border-image-outset:0;border-image-repeat:stretch;border-image-slice:100%;border-image-source:none;border-image-width:1;}html, :host{line-height:1.5;tab-size:4;font-family:var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings, normal);font-variation-settings:var(--default-font-variation-settings, normal);}hr{height:0px;color:inherit;border-top-width:1px;}abbr:where([title]){text-decoration-color:currentcolor;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:auto;}h1, h2, h3, h4, h5, h6{font-size:inherit;font-weight:inherit;}a{color:inherit;text-decoration-color:inherit;text-decoration-line:inherit;text-decoration-style:inherit;text-decoration-thickness:inherit;}b, strong{font-weight:bolder;}code, kbd, samp, pre{font-family:var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings, normal);font-variation-settings:var(--default-mono-font-variation-settings, normal);font-size:1em;}small{font-size:80%;}sub, sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sub{bottom:-0.25em;}sup{top:-0.5em;}table{text-indent:0px;border-top-color:inherit;border-right-color:inherit;border-bottom-color:inherit;border-left-color:inherit;border-collapse:collapse;}:focus-visible{outline-color:currentcolor;outline-style:auto;outline-width:medium;}progress{vertical-align:baseline;}summary{display:list-item;}ol, ul, menu{list-style-position:outside;list-style-image:none;list-style-type:none;}img, svg, video, canvas, audio, iframe, embed, object{display:block;vertical-align:middle;}img, video{max-width:100%;height:auto;}button, input, select, optgroup, textarea, ::file-selector-button{font-style:inherit;font-variant-caps:inherit;font-weight:inherit;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;font-size-adjust:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-variant-alternates:inherit;font-variant-east-asian:inherit;font-variant-emoji:inherit;font-variant-ligatures:inherit;font-variant-numeric:inherit;font-variant-position:inherit;font-language-override:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background-color:transparent;opacity:1;}:where(select:is([multiple], [size])) optgroup{font-weight:bolder;}:where(select:is([multiple], [size])) optgroup option{padding-inline-start:20px;}::file-selector-button{margin-inline-end:4px;}::placeholder{opacity:1;}::placeholder{color:currentcolor;}textarea{resize:vertical;}::-webkit-search-decoration{appearance:none;}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit;}::-webkit-datetime-edit{display:inline-flex;}::-webkit-datetime-edit-fields-wrapper{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field{padding-block-start:0px;padding-block-end:0px;}:user-invalid{box-shadow:none;}button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button{appearance:button;}::-webkit-inner-spin-button, ::-webkit-outer-spin-button{height:auto;}[hidden]:where(:not([hidden="until-found"])){display:none !important;}*, ::after, ::before, ::backdrop, ::file-selector-button{box-sizing:border-box;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top-width:0px;border-top-style:solid;border-top-color:currentcolor;border-right-width:0px;border-right-style:solid;border-right-color:currentcolor;border-bottom-width:0px;border-bottom-style:solid;border-bottom-color:currentcolor;border-left-width:0px;border-left-style:solid;border-left-color:currentcolor;border-image-outset:0;border-image-repeat:stretch;border-image-slice:100%;border-image-source:none;border-image-width:1;}html, :host{line-height:1.5;tab-size:4;font-family:var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings, normal);font-variation-settings:var(--default-font-variation-settings, normal);}hr{height:0px;color:inherit;border-top-width:1px;}abbr:where([title]){text-decoration-color:currentcolor;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:auto;}h1, h2, h3, h4, h5, h6{font-size:inherit;font-weight:inherit;}a{color:inherit;text-decoration-color:inherit;text-decoration-line:inherit;text-decoration-style:inherit;text-decoration-thickness:inherit;}b, strong{font-weight:bolder;}code, kbd, samp, pre{font-family:var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings, normal);font-variation-settings:var(--default-mono-font-variation-settings, normal);font-size:1em;}small{font-size:80%;}sub, sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sub{bottom:-0.25em;}sup{top:-0.5em;}table{text-indent:0px;border-top-color:inherit;border-right-color:inherit;border-bottom-color:inherit;border-left-color:inherit;border-collapse:collapse;}:focus-visible{outline-color:currentcolor;outline-style:auto;outline-width:medium;}progress{vertical-align:baseline;}summary{display:list-item;}ol, ul, menu{list-style-position:outside;list-style-image:none;list-style-type:none;}img, svg, video, canvas, audio, iframe, embed, object{display:block;vertical-align:middle;}img, video{max-width:100%;height:auto;}button, input, select, optgroup, textarea, ::file-selector-button{font-style:inherit;font-variant-caps:inherit;font-weight:inherit;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;font-size-adjust:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-variant-alternates:inherit;font-variant-east-asian:inherit;font-variant-emoji:inherit;font-variant-ligatures:inherit;font-variant-numeric:inherit;font-variant-position:inherit;font-language-override:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background-color:transparent;opacity:1;}:where(select:is([multiple], [size])) optgroup{font-weight:bolder;}:where(select:is([multiple], [size])) optgroup option{padding-inline-start:20px;}::file-selector-button{margin-inline-end:4px;}::placeholder{opacity:1;}::placeholder{color:currentcolor;}textarea{resize:vertical;}::-webkit-search-decoration{appearance:none;}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit;}::-webkit-datetime-edit{display:inline-flex;}::-webkit-datetime-edit-fields-wrapper{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field{padding-block-start:0px;padding-block-end:0px;}:user-invalid{box-shadow:none;}button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button{appearance:button;}::-webkit-inner-spin-button, ::-webkit-outer-spin-button{height:auto;}[hidden]:where(:not([hidden="until-found"])){display:none !important;}*, ::after, ::before, ::backdrop, ::file-selector-button{box-sizing:border-box;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top-width:0px;border-top-style:solid;border-top-color:currentcolor;border-right-width:0px;border-right-style:solid;border-right-color:currentcolor;border-bottom-width:0px;border-bottom-style:solid;border-bottom-color:currentcolor;border-left-width:0px;border-left-style:solid;border-left-color:currentcolor;border-image-outset:0;border-image-repeat:stretch;border-image-slice:100%;border-image-source:none;border-image-width:1;}html, :host{line-height:1.5;tab-size:4;font-family:var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings, normal);font-variation-settings:var(--default-font-variation-settings, normal);}hr{height:0px;color:inherit;border-top-width:1px;}abbr:where([title]){text-decoration-color:currentcolor;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:auto;}h1, h2, h3, h4, h5, h6{font-size:inherit;font-weight:inherit;}a{color:inherit;text-decoration-color:inherit;text-decoration-line:inherit;text-decoration-style:inherit;text-decoration-thickness:inherit;}b, strong{font-weight:bolder;}code, kbd, samp, pre{font-family:var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings, normal);font-variation-settings:var(--default-mono-font-variation-settings, normal);font-size:1em;}small{font-size:80%;}sub, sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sub{bottom:-0.25em;}sup{top:-0.5em;}table{text-indent:0px;border-top-color:inherit;border-right-color:inherit;border-bottom-color:inherit;border-left-color:inherit;border-collapse:collapse;}:focus-visible{outline-color:currentcolor;outline-style:auto;outline-width:medium;}progress{vertical-align:baseline;}summary{display:list-item;}ol, ul, menu{list-style-position:outside;list-style-image:none;list-style-type:none;}img, svg, video, canvas, audio, iframe, embed, object{display:block;vertical-align:middle;}img, video{max-width:100%;height:auto;}button, input, select, optgroup, textarea, ::file-selector-button{font-style:inherit;font-variant-caps:inherit;font-weight:inherit;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;font-size-adjust:inherit;font-kerning:inherit;font-optical-sizing:inherit;font-variant-alternates:inherit;font-variant-east-asian:inherit;font-variant-emoji:inherit;font-variant-ligatures:inherit;font-variant-numeric:inherit;font-variant-position:inherit;font-language-override:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background-color:transparent;opacity:1;}:where(select:is([multiple], [size])) optgroup{font-weight:bolder;}:where(select:is([multiple], [size])) optgroup option{padding-inline-start:20px;}::file-selector-button{margin-inline-end:4px;}::placeholder{opacity:1;}::placeholder{color:currentcolor;}textarea{resize:vertical;}::-webkit-search-decoration{appearance:none;}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit;}::-webkit-datetime-edit{display:inline-flex;}::-webkit-datetime-edit-fields-wrapper{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field{padding-block-start:0px;padding-block-end:0px;}:user-invalid{box-shadow:none;}button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button{appearance:button;}::-webkit-inner-spin-button, ::-webkit-outer-spin-button{height:auto;}[hidden]:where(:not([hidden="until-found"])){display:none !important;}}@layer utilities{.absolute{position:absolute;}.relative{position:relative;}.-top-3{top:calc(var(--spacing) * -3);}.left-1\/2{left:calc(50%);}.mx-auto{margin-inline-start:auto;margin-inline-end:auto;}.mt-1{margin-top:calc(var(--spacing) * 1);}.mt-2{margin-top:calc(var(--spacing) * 2);}.mt-3{margin-top:calc(var(--spacing) * 3);}.mt-4{margin-top:calc(var(--spacing) * 4);}.mt-6{margin-top:calc(var(--spacing) * 6);}.mt-auto{margin-top:auto;}.mr-2{margin-right:calc(var(--spacing) * 2);}.mr-3{margin-right:calc(var(--spacing) * 3);}.mb-1{margin-bottom:calc(var(--spacing) * 1);}.mb-2{margin-bottom:calc(var(--spacing) * 2);}.mb-3{margin-bottom:calc(var(--spacing) * 3);}.mb-4{margin-bottom:calc(var(--spacing) * 4);}.mb-6{margin-bottom:calc(var(--spacing) * 6);}.mb-8{margin-bottom:calc(var(--spacing) * 8);}.mb-10{margin-bottom:calc(var(--spacing) * 10);}.block{display:block;}.flex{display:flex;}.grid{display:grid;}.inline-block{display:inline-block;}.inline-flex{display:inline-flex;}.h-2{height:calc(var(--spacing) * 2);}.h-16{height:calc(var(--spacing) * 16);}.min-h-screen{min-height:100vh;}.w-2{width:calc(var(--spacing) * 2);}.w-16{width:calc(var(--spacing) * 16);}.w-full{width:100%;}.max-w-3xl{max-width:var(--container-3xl);}.max-w-4xl{max-width:var(--container-4xl);}.max-w-5xl{max-width:var(--container-5xl);}.max-w-6xl{max-width:var(--container-6xl);}.flex-shrink-0{flex-shrink:0;}.-translate-x-1\/2{--tw-translate-x:calc(calc(1/2 * 100%) * -1);translate:var(--tw-translate-x) var(--tw-translate-y);}.cursor-pointer{cursor:pointer;}.list-disc{list-style-type:disc;}.flex-col{flex-direction:column;}.flex-wrap{flex-wrap:wrap;}.items-center{align-items:center;}.items-start{align-items:flex-start;}.justify-between{justify-content:space-between;}.justify-center{justify-content:center;}.rounded-full{border-top-left-radius:calc(infinity * 1px);border-top-right-radius:calc(infinity * 1px);border-bottom-right-radius:calc(infinity * 1px);border-bottom-left-radius:calc(infinity * 1px);}.border{border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;}.border-2{border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px;}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px;}.bg-amber-50{background-color:var(--color-amber-50);}.bg-emerald-50{background-color:var(--color-emerald-50);}.bg-emerald-100{background-color:var(--color-emerald-100);}.bg-emerald-500{background-color:var(--color-emerald-500);}.bg-emerald-600{background-color:var(--color-emerald-600);}.bg-gray-50{background-color:var(--color-gray-50);}.bg-gray-100{background-color:var(--color-gray-100);}.bg-gray-900{background-color:var(--color-gray-900);}.bg-white{background-color:var(--color-white);}.bg-yellow-100{background-color:var(--color-yellow-100);}.object-cover{object-fit:cover;}.pt-2{padding-top:calc(var(--spacing) * 2);}.pt-4{padding-top:calc(var(--spacing) * 4);}.pl-5{padding-left:calc(var(--spacing) * 5);}.text-center{text-align:center;}.text-2xl{font-size:var(--text-2xl);line-height:var(--tw-leading, var(--text-2xl--line-height));}.text-base{font-size:var(--text-base);line-height:var(--tw-leading, var(--text-base--line-height));}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading, var(--text-lg--line-height));}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading, var(--text-sm--line-height));}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading, var(--text-xl--line-height));}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading, var(--text-xs--line-height));}.leading-tight{--tw-leading:var(--leading-tight);line-height:var(--leading-tight);}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);}.font-extrabold{--tw-font-weight:var(--font-weight-extrabold);font-weight:var(--font-weight-extrabold);}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium);}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold);}.whitespace-pre-line{text-wrap-mode:wrap;white-space-collapse:preserve-breaks;}.text-amber-900{color:var(--color-amber-900);}.text-emerald-100{color:var(--color-emerald-100);}.text-emerald-600{color:var(--color-emerald-600);}.text-emerald-700{color:var(--color-emerald-700);}.text-emerald-800{color:var(--color-emerald-800);}.text-gray-400{color:var(--color-gray-400);}.text-gray-500{color:var(--color-gray-500);}.text-gray-600{color:var(--color-gray-600);}.text-gray-700{color:var(--color-gray-700);}.text-gray-800{color:var(--color-gray-800);}.text-gray-900{color:var(--color-gray-900);}.text-white{color:var(--color-white);}.text-yellow-500{color:var(--color-yellow-500);}.text-yellow-900{color:var(--color-yellow-900);}.italic{font-style:italic;}.shadow{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-md{--tw-shadow:0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.absolute{position:absolute;}.relative{position:relative;}.-top-3{top:calc(var(--spacing) * -3);}.left-1\/2{left:calc(50%);}.mx-auto{margin-inline-start:auto;margin-inline-end:auto;}.mt-1{margin-top:calc(var(--spacing) * 1);}.mt-2{margin-top:calc(var(--spacing) * 2);}.mt-3{margin-top:calc(var(--spacing) * 3);}.mt-4{margin-top:calc(var(--spacing) * 4);}.mt-6{margin-top:calc(var(--spacing) * 6);}.mt-auto{margin-top:auto;}.mr-2{margin-right:calc(var(--spacing) * 2);}.mr-3{margin-right:calc(var(--spacing) * 3);}.mb-1{margin-bottom:calc(var(--spacing) * 1);}.mb-2{margin-bottom:calc(var(--spacing) * 2);}.mb-3{margin-bottom:calc(var(--spacing) * 3);}.mb-4{margin-bottom:calc(var(--spacing) * 4);}.mb-6{margin-bottom:calc(var(--spacing) * 6);}.mb-8{margin-bottom:calc(var(--spacing) * 8);}.mb-10{margin-bottom:calc(var(--spacing) * 10);}.block{display:block;}.flex{display:flex;}.grid{display:grid;}.inline-block{display:inline-block;}.inline-flex{display:inline-flex;}.h-2{height:calc(var(--spacing) * 2);}.h-16{height:calc(var(--spacing) * 16);}.h-24{height:calc(var(--spacing) * 24);}.h-28{height:calc(var(--spacing) * 28);}.min-h-screen{min-height:100vh;}.w-2{width:calc(var(--spacing) * 2);}.w-16{width:calc(var(--spacing) * 16);}.w-24{width:calc(var(--spacing) * 24);}.w-28{width:calc(var(--spacing) * 28);}.w-full{width:100%;}.max-w-3xl{max-width:var(--container-3xl);}.max-w-4xl{max-width:var(--container-4xl);}.max-w-5xl{max-width:var(--container-5xl);}.max-w-6xl{max-width:var(--container-6xl);}.max-w-md{max-width:var(--container-md);}.flex-shrink-0{flex-shrink:0;}.-translate-x-1\/2{--tw-translate-x:calc(calc(1/2 * 100%) * -1);translate:var(--tw-translate-x) var(--tw-translate-y);}.cursor-pointer{cursor:pointer;}.list-disc{list-style-type:disc;}.flex-col{flex-direction:column;}.flex-wrap{flex-wrap:wrap;}.items-center{align-items:center;}.items-start{align-items:flex-start;}.justify-between{justify-content:space-between;}.justify-center{justify-content:center;}.rounded-full{border-top-left-radius:calc(infinity * 1px);border-top-right-radius:calc(infinity * 1px);border-bottom-right-radius:calc(infinity * 1px);border-bottom-left-radius:calc(infinity * 1px);}.border{border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;}.border-2{border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px;}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px;}.bg-amber-50{background-color:var(--color-amber-50);}.bg-emerald-50{background-color:var(--color-emerald-50);}.bg-emerald-100{background-color:var(--color-emerald-100);}.bg-emerald-500{background-color:var(--color-emerald-500);}.bg-emerald-600{background-color:var(--color-emerald-600);}.bg-gray-50{background-color:var(--color-gray-50);}.bg-gray-100{background-color:var(--color-gray-100);}.bg-gray-900{background-color:var(--color-gray-900);}.bg-white{background-color:var(--color-white);}.bg-yellow-100{background-color:var(--color-yellow-100);}.bg-gradient-to-tr{--tw-gradient-position:to top right in oklab;background-image:linear-gradient(var(--tw-gradient-stops));}.object-cover{object-fit:cover;}.pt-2{padding-top:calc(var(--spacing) * 2);}.pt-4{padding-top:calc(var(--spacing) * 4);}.pl-5{padding-left:calc(var(--spacing) * 5);}.text-center{text-align:center;}.text-2xl{font-size:var(--text-2xl);line-height:var(--tw-leading, var(--text-2xl--line-height));}.text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading, var(--text-3xl--line-height));}.text-4xl{font-size:var(--text-4xl);line-height:var(--tw-leading, var(--text-4xl--line-height));}.text-base{font-size:var(--text-base);line-height:var(--tw-leading, var(--text-base--line-height));}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading, var(--text-lg--line-height));}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading, var(--text-sm--line-height));}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading, var(--text-xl--line-height));}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading, var(--text-xs--line-height));}.leading-tight{--tw-leading:var(--leading-tight);line-height:var(--leading-tight);}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);}.font-extrabold{--tw-font-weight:var(--font-weight-extrabold);font-weight:var(--font-weight-extrabold);}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium);}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold);}.whitespace-pre-line{text-wrap-mode:wrap;white-space-collapse:preserve-breaks;}.text-amber-900{color:var(--color-amber-900);}.text-emerald-100{color:var(--color-emerald-100);}.text-emerald-600{color:var(--color-emerald-600);}.text-emerald-700{color:var(--color-emerald-700);}.text-emerald-800{color:var(--color-emerald-800);}.text-gray-400{color:var(--color-gray-400);}.text-gray-500{color:var(--color-gray-500);}.text-gray-600{color:var(--color-gray-600);}.text-gray-700{color:var(--color-gray-700);}.text-gray-800{color:var(--color-gray-800);}.text-gray-900{color:var(--color-gray-900);}.text-white{color:var(--color-white);}.text-yellow-500{color:var(--color-yellow-500);}.text-yellow-900{color:var(--color-yellow-900);}.italic{font-style:italic;}.shadow{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-md{--tw-shadow:0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.absolute{position:absolute;}.relative{position:relative;}.-top-3{top:calc(var(--spacing) * -3);}.left-1\/2{left:calc(50%);}.mx-auto{margin-inline-start:auto;margin-inline-end:auto;}.mt-1{margin-top:calc(var(--spacing) * 1);}.mt-2{margin-top:calc(var(--spacing) * 2);}.mt-3{margin-top:calc(var(--spacing) * 3);}.mt-4{margin-top:calc(var(--spacing) * 4);}.mt-6{margin-top:calc(var(--spacing) * 6);}.mt-auto{margin-top:auto;}.mr-2{margin-right:calc(var(--spacing) * 2);}.mr-3{margin-right:calc(var(--spacing) * 3);}.mb-1{margin-bottom:calc(var(--spacing) * 1);}.mb-2{margin-bottom:calc(var(--spacing) * 2);}.mb-3{margin-bottom:calc(var(--spacing) * 3);}.mb-4{margin-bottom:calc(var(--spacing) * 4);}.mb-6{margin-bottom:calc(var(--spacing) * 6);}.mb-8{margin-bottom:calc(var(--spacing) * 8);}.mb-10{margin-bottom:calc(var(--spacing) * 10);}.block{display:block;}.flex{display:flex;}.grid{display:grid;}.inline-block{display:inline-block;}.inline-flex{display:inline-flex;}.h-2{height:calc(var(--spacing) * 2);}.h-16{height:calc(var(--spacing) * 16);}.h-24{height:calc(var(--spacing) * 24);}.h-28{height:calc(var(--spacing) * 28);}.min-h-screen{min-height:100vh;}.w-2{width:calc(var(--spacing) * 2);}.w-16{width:calc(var(--spacing) * 16);}.w-24{width:calc(var(--spacing) * 24);}.w-28{width:calc(var(--spacing) * 28);}.w-full{width:100%;}.max-w-3xl{max-width:var(--container-3xl);}.max-w-4xl{max-width:var(--container-4xl);}.max-w-5xl{max-width:var(--container-5xl);}.max-w-6xl{max-width:var(--container-6xl);}.max-w-md{max-width:var(--container-md);}.flex-shrink-0{flex-shrink:0;}.-translate-x-1\/2{--tw-translate-x:calc(calc(1/2 * 100%) * -1);translate:var(--tw-translate-x) var(--tw-translate-y);}.cursor-pointer{cursor:pointer;}.list-disc{list-style-type:disc;}.flex-col{flex-direction:column;}.flex-wrap{flex-wrap:wrap;}.items-center{align-items:center;}.items-start{align-items:flex-start;}.justify-between{justify-content:space-between;}.justify-center{justify-content:center;}.rounded-full{border-top-left-radius:calc(infinity * 1px);border-top-right-radius:calc(infinity * 1px);border-bottom-right-radius:calc(infinity * 1px);border-bottom-left-radius:calc(infinity * 1px);}.border{border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;}.border-2{border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px;}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px;}.bg-amber-50{background-color:var(--color-amber-50);}.bg-emerald-50{background-color:var(--color-emerald-50);}.bg-emerald-100{background-color:var(--color-emerald-100);}.bg-emerald-500{background-color:var(--color-emerald-500);}.bg-emerald-600{background-color:var(--color-emerald-600);}.bg-gray-50{background-color:var(--color-gray-50);}.bg-gray-100{background-color:var(--color-gray-100);}.bg-gray-900{background-color:var(--color-gray-900);}.bg-white{background-color:var(--color-white);}.bg-yellow-100{background-color:var(--color-yellow-100);}.bg-gradient-to-tr{--tw-gradient-position:to top right in oklab;background-image:linear-gradient(var(--tw-gradient-stops));}.object-cover{object-fit:cover;}.pt-2{padding-top:calc(var(--spacing) * 2);}.pt-4{padding-top:calc(var(--spacing) * 4);}.pl-5{padding-left:calc(var(--spacing) * 5);}.text-center{text-align:center;}.text-2xl{font-size:var(--text-2xl);line-height:var(--tw-leading, var(--text-2xl--line-height));}.text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading, var(--text-3xl--line-height));}.text-4xl{font-size:var(--text-4xl);line-height:var(--tw-leading, var(--text-4xl--line-height));}.text-base{font-size:var(--text-base);line-height:var(--tw-leading, var(--text-base--line-height));}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading, var(--text-lg--line-height));}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading, var(--text-sm--line-height));}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading, var(--text-xl--line-height));}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading, var(--text-xs--line-height));}.leading-tight{--tw-leading:var(--leading-tight);line-height:var(--leading-tight);}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);}.font-extrabold{--tw-font-weight:var(--font-weight-extrabold);font-weight:var(--font-weight-extrabold);}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium);}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold);}.whitespace-pre-line{text-wrap-mode:wrap;white-space-collapse:preserve-breaks;}.text-amber-900{color:var(--color-amber-900);}.text-emerald-100{color:var(--color-emerald-100);}.text-emerald-600{color:var(--color-emerald-600);}.text-emerald-700{color:var(--color-emerald-700);}.text-emerald-800{color:var(--color-emerald-800);}.text-gray-400{color:var(--color-gray-400);}.text-gray-500{color:var(--color-gray-500);}.text-gray-600{color:var(--color-gray-600);}.text-gray-700{color:var(--color-gray-700);}.text-gray-800{color:var(--color-gray-800);}.text-gray-900{color:var(--color-gray-900);}.text-white{color:var(--color-white);}.text-yellow-500{color:var(--color-yellow-500);}.text-yellow-900{color:var(--color-yellow-900);}.italic{font-style:italic;}.shadow{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-md{--tw-shadow:0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-emerald-400\/70{--tw-shadow-color:color-mix(in srgb, oklch(76.5% 0.177 163.223) 70%, transparent);}}@layer properties{*, ::before, ::after, ::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-space-y-reverse:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;}*, ::before, ::after, ::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-space-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;}*, ::before, ::after, ::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-space-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;}}
+/*! tailwindcss v4.1.7 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-red-50: oklch(97.1% 0.013 17.38);
+    --color-red-100: oklch(93.6% 0.032 17.717);
+    --color-red-200: oklch(88.5% 0.062 18.334);
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-red-800: oklch(44.4% 0.177 26.899);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-100: oklch(96.2% 0.059 95.617);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-amber-900: oklch(41.4% 0.112 45.904);
+    --color-yellow-50: oklch(98.7% 0.026 102.212);
+    --color-yellow-100: oklch(97.3% 0.071 103.193);
+    --color-yellow-200: oklch(94.5% 0.129 101.54);
+    --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
+    --color-yellow-900: oklch(42.1% 0.095 57.708);
+    --color-green-50: oklch(98.2% 0.018 155.826);
+    --color-green-100: oklch(96.2% 0.044 156.743);
+    --color-green-200: oklch(92.5% 0.084 155.995);
+    --color-green-500: oklch(72.3% 0.219 149.579);
+    --color-green-600: oklch(62.7% 0.194 149.214);
+    --color-green-700: oklch(52.7% 0.154 150.069);
+    --color-green-800: oklch(44.8% 0.119 151.328);
+    --color-emerald-50: oklch(97.9% 0.021 166.113);
+    --color-emerald-100: oklch(95% 0.052 163.051);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-emerald-800: oklch(43.2% 0.095 166.913);
+    --color-sky-500: oklch(68.5% 0.169 237.323);
+    --color-pink-50: oklch(97.1% 0.014 343.198);
+    --color-pink-500: oklch(65.6% 0.241 354.308);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-900: oklch(21% 0.034 264.665);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-5xl: 64rem;
+    --container-6xl: 72rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    --tracking-tight: -0.025em;
+    --leading-tight: 1.25;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .-top-3 {
+    top: calc(var(--spacing) * -3);
+  }
+  .left-1\/2 {
+    left: calc(1/2 * 100%);
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-3 {
+    margin-right: calc(var(--spacing) * 3);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
+  .h-24 {
+    height: calc(var(--spacing) * 24);
+  }
+  .h-28 {
+    height: calc(var(--spacing) * 28);
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-28 {
+    width: calc(var(--spacing) * 28);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
+  .max-w-5xl {
+    max-width: var(--container-5xl);
+  }
+  .max-w-6xl {
+    max-width: var(--container-6xl);
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .space-y-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-amber-100 {
+    border-color: var(--color-amber-100);
+  }
+  .border-amber-200 {
+    border-color: var(--color-amber-200);
+  }
+  .border-emerald-100 {
+    border-color: var(--color-emerald-100);
+  }
+  .border-emerald-500 {
+    border-color: var(--color-emerald-500);
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+  .border-green-100 {
+    border-color: var(--color-green-100);
+  }
+  .border-red-100 {
+    border-color: var(--color-red-100);
+  }
+  .border-yellow-100 {
+    border-color: var(--color-yellow-100);
+  }
+  .border-yellow-200 {
+    border-color: var(--color-yellow-200);
+  }
+  .border-yellow-200\/70 {
+    border-color: color-mix(in srgb, oklch(94.5% 0.129 101.54) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-yellow-200) 70%, transparent);
+    }
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-emerald-50 {
+    background-color: var(--color-emerald-50);
+  }
+  .bg-emerald-100 {
+    background-color: var(--color-emerald-100);
+  }
+  .bg-emerald-500 {
+    background-color: var(--color-emerald-500);
+  }
+  .bg-emerald-600 {
+    background-color: var(--color-emerald-600);
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-900 {
+    background-color: var(--color-gray-900);
+  }
+  .bg-green-50 {
+    background-color: var(--color-green-50);
+  }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
+  .bg-green-200 {
+    background-color: var(--color-green-200);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+  .bg-red-100 {
+    background-color: var(--color-red-100);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/70 {
+    background-color: color-mix(in srgb, #fff 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
+    }
+  }
+  .bg-white\/80 {
+    background-color: color-mix(in srgb, #fff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+    }
+  }
+  .bg-yellow-100 {
+    background-color: var(--color-yellow-100);
+  }
+  .bg-yellow-300 {
+    background-color: var(--color-yellow-300);
+  }
+  .bg-gradient-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-gradient-to-tr {
+    --tw-gradient-position: to top right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/624015\/pexels-photo-624015\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1200\'\)\] {
+    background-image: url('https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1200');
+  }
+  .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/6129045\/pexels-photo-6129045\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1200\'\)\] {
+    background-image: url('https://images.pexels.com/photos/6129045/pexels-photo-6129045.jpeg?auto=compress&cs=tinysrgb&w=1200');
+  }
+  .from-emerald-100 {
+    --tw-gradient-from: var(--color-emerald-100);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-green-100 {
+    --tw-gradient-from: var(--color-green-100);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-pink-50 {
+    --tw-gradient-from: var(--color-pink-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-red-100 {
+    --tw-gradient-from: var(--color-red-100);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .via-yellow-50 {
+    --tw-gradient-via: var(--color-yellow-50);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+  .to-amber-100 {
+    --tw-gradient-to: var(--color-amber-100);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-green-200 {
+    --tw-gradient-to: var(--color-green-200);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-pink-50 {
+    --tw-gradient-to: var(--color-pink-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-red-200 {
+    --tw-gradient-to: var(--color-red-200);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
+  }
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+  .text-amber-900 {
+    color: var(--color-amber-900);
+  }
+  .text-emerald-100 {
+    color: var(--color-emerald-100);
+  }
+  .text-emerald-600 {
+    color: var(--color-emerald-600);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-emerald-800 {
+    color: var(--color-emerald-800);
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+  .text-green-700 {
+    color: var(--color-green-700);
+  }
+  .text-green-800 {
+    color: var(--color-green-800);
+  }
+  .text-pink-500 {
+    color: var(--color-pink-500);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-red-800 {
+    color: var(--color-red-800);
+  }
+  .text-sky-500 {
+    color: var(--color-sky-500);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .text-yellow-500 {
+    color: var(--color-yellow-500);
+  }
+  .text-yellow-900 {
+    color: var(--color-yellow-900);
+  }
+  .italic {
+    font-style: italic;
+  }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .backdrop-blur {
+    --tw-backdrop-blur: blur(8px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .hover\:bg-amber-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-amber-50);
+      }
+    }
+  }
+  .hover\:bg-emerald-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-emerald-700);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .sm\:col-span-2 {
+    @media (width >= 40rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .sm\:mx-0 {
+    @media (width >= 40rem) {
+      margin-inline: calc(var(--spacing) * 0);
+    }
+  }
+  .sm\:h-20 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 20);
+    }
+  }
+  .sm\:w-20 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 20);
+    }
+  }
+  .sm\:w-32 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 32);
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:items-start {
+    @media (width >= 40rem) {
+      align-items: flex-start;
+    }
+  }
+  .sm\:p-6 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:p-7 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 7);
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:py-14 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 14);
+    }
+  }
+  .sm\:py-16 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+  .sm\:text-left {
+    @media (width >= 40rem) {
+      text-align: left;
+    }
+  }
+  .sm\:text-2xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-base {
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .sm\:text-sm {
+    @media (width >= 40rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
+  .sm\:text-xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .sm\:text-xs {
+    @media (width >= 40rem) {
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
+  }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 48rem) {
+      align-items: center;
+    }
+  }
+  .md\:justify-between {
+    @media (width >= 48rem) {
+      justify-content: space-between;
+    }
+  }
+  .md\:text-sm {
+    @media (width >= 48rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
+  .lg\:col-span-1 {
+    @media (width >= 64rem) {
+      grid-column: span 1 / span 1;
+    }
+  }
+  .lg\:grid-cols-2 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:items-stretch {
+    @media (width >= 64rem) {
+      align-items: stretch;
+    }
+  }
+  .lg\:justify-end {
+    @media (width >= 64rem) {
+      justify-content: flex-end;
+    }
+  }
+  .lg\:gap-16 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 16);
+    }
+  }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:py-18 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 18);
+    }
+  }
+  .lg\:text-4xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .xl\:text-5xl {
+    @media (width >= 80rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+    }
+  }
+}
+
+  </style>
+</head>
+<body>
+<html><head></head><body><div id="page-top" class="min-h-screen flex flex-col"><!-- Top Notification Bar --><div class="w-full bg-yellow-100 border-b border-yellow-200"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-center text-xs sm:text-sm font-medium text-yellow-900"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-center text-xs sm:text-sm font-medium text-yellow-900">
+        ❤️ Over 64,000 people are already supporting their nighttime metabolism with this simple evening ritual.
+      </div></div></div><!-- Hero Section --><section id="hero-3" draggable="true" class="bg-green-50 py-10 sm:py-14 lg:py-18"><div id="ikd6f-2" draggable="true" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div id="ixylg-2" draggable="true" class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"><!-- Hero Copy --><div id="iog58-2" draggable="true" class="space-y-5"><p id="ipcm7-2" draggable="true" data-variable="hero_badge_text" class="inline-flex items-center text-xs sm:text-sm font-semibold text-green-800 bg-green-100 px-3 py-1 rounded-full"><span id="it756-2" draggable="true" class="mr-2 text-green-600">★</span>★
+            NightTime Burn - Burn Fat While You Sleep</p><h1 id="is5jl-2" draggable="true" data-variable="hero_main_headline" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight text-gray-900"><span class="bg-green-200 px-1">How to Get Rid of Belly Fat?</span>How to Get Rid of Belly Fat? Scientists Have Found a Simple Way to Burn Fat While You Sleep<span class="text-green-800">Scientists Have Found a Simple Way to Burn Fat While You Sleep</span></h1><p id="innqq-2" draggable="true" data-variable="hero_subheadline_primary" class="text-base sm:text-lg text-gray-700">Confirmed: Metabolic Syndrome Is the Main Cause of Stubborn Belly Fat – But Is There a Solution?</p><p id="i2cty-2" draggable="true" data-variable="hero_subheadline_secondary" class="text-base sm:text-lg text-gray-700">Once Metabolic Syndrome Is Addressed, Belly Fat Begins to Melt Away – This Simple Evening Trick Could Change Everything</p><p id="i4fkv-2" draggable="true" class="text-base text-gray-700">
+          </p><p id="iu31g-2" draggable="true" data-variable="hero_supporting_text_1" class="text-sm text-gray-700">If you're struggling to shed those extra pounds, this could be life-changing news.</p><p id="iemz7-2" draggable="true">
+          </p><p id="iajvj-2" draggable="true" class="text-base text-gray-700">
+          </p><p id="ii1cf-2" draggable="true" data-variable="hero_supporting_text_2" class="text-base text-gray-700 font-semibold">Metabolic scientists are calling it the discovery of the decade – a way to activate fat-burning while you sleep.</p><p id="iz54s-2" draggable="true">
+          </p><div id="i0a1j-2" draggable="true" class="flex flex-col sm:flex-row sm:items-center gap-4 pt-2"><p id="ipnes-2" draggable="true" class="text-xs sm:text-sm text-gray-600 flex items-center">
+            </p><p id="ism66-2" draggable="true" data-variable="hero_guarantee_text" class="text-xs sm:text-sm text-gray-600 flex items-center"><span id="i8q9u-2" draggable="true" class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2"></span>30-day money-back guarantee</p><p id="ieqzo-2" draggable="true">
+            </p></div></div><!-- Hero Visual / Trust --><div id="ihggv-2" draggable="true" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" class="flex justify-center lg:justify-end"><div id="i66fh-2" draggable="true" class="bg-white rounded-2xl shadow-md border border-green-100 p-6 w-full max-w-md flex flex-col items-center"><div id="i5nnz-2" draggable="true" class="w-28 h-28 rounded-full bg-gradient-to-tr from-green-100 to-green-200 mb-4 flex items-center justify-center"><span id="ii6yk-2" draggable="true" aria-hidden="true" class="text-4xl">🌙</span></div><h2 id="ivuqd-2" draggable="true" data-variable="hero_card_title" class="text-lg font-bold text-center mb-2">Burn Fat While You Sleep</h2><p id="i5xrk-2" draggable="true" data-variable="hero_card_description" class="text-sm text-gray-600 text-center mb-4">Golden Tree NightTime Burn targets metabolic syndrome so excess evening calories don't end up around your belly, hips, thighs and bum.</p><div id="iw5zj-2" draggable="true" class="w-full flex flex-col gap-3 text-xs text-gray-700"><div id="i3hmw-2" draggable="true" class="flex items-center justify-between"><span id="ip2f3-2" draggable="true" data-variable="hero_card_benefit_1">Customers report better sleep</span><span id="irukg-2" draggable="true" class="text-yellow-500">★★★★★</span></div><div id="iykzf-2" draggable="true" class="flex items-center justify-between"><span id="iw6ei-2" draggable="true" data-variable="hero_card_benefit_2">Clinically studied ingredients</span><span id="ifikf-2" draggable="true" data-variable="hero_card_badge_1" class="text-green-700 font-semibold">Evidence-based</span></div><div id="i77py-2" draggable="true" class="flex items-center justify-between"><span id="i3hft-2" draggable="true" data-variable="hero_card_benefit_3">Protected purchase</span><span id="ijxfw-2" draggable="true" data-variable="hero_card_badge_2" class="text-green-700 font-semibold">60-day guarantee</span></div></div></div></div></div></div></section><!-- Problem Section --><section id="problem" class="py-14 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="Test" class="text-2xl sm:text-3xl font-extrabold text-center mb-6">The Real Culprit Behind Stubborn Belly Fat</h2><div class="space-y-4 text-gray-700 text-base"><p>So how does it work?</p><p>It turns out that excess weight isn't just about age, genetics or lifestyle.</p><p>The real culprit? Metabolic syndrome – a condition that encourages stubborn fat to accumulate in the most frustrating places.</p><p>Wondering if you might have it? Here are some of the telltale signs:</p></div><div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><div class="bg-amber-50 border border-amber-100 rounded-lg p-4 flex items-start"><span aria-hidden="true" class="text-emerald-600 mr-3 mt-1">✓</span><p class="text-sm text-gray-800">Difficulty losing weight</p></div><div class="bg-amber-50 border border-amber-100 rounded-lg p-4 flex items-start"><span aria-hidden="true" class="text-emerald-600 mr-3 mt-1">✓</span><p class="text-sm text-gray-800">Unexplained weight gain</p></div><div class="bg-amber-50 border border-amber-100 rounded-lg p-4 flex items-start"><span aria-hidden="true" class="text-emerald-600 mr-3 mt-1">✓</span><p class="text-sm text-gray-800">A sluggish metabolism</p></div><div class="bg-amber-50 border border-amber-100 rounded-lg p-4 flex items-start"><span aria-hidden="true" class="text-emerald-600 mr-3 mt-1">✓</span><p class="text-sm text-gray-800">Constant fatigue (even after a full night's sleep)</p></div><div class="bg-amber-50 border border-amber-100 rounded-lg p-4 flex items-start sm:col-span-2 lg:col-span-1"><span aria-hidden="true" class="text-emerald-600 mr-3 mt-1">✓</span><p class="text-sm text-gray-800">Low energy levels throughout the day</p></div></div></div></section><!-- Why Weight Loss Is Hard --><section id="why-weight-loss-is-hard" class="py-14 sm:py-16 bg-gray-50"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold text-center mb-1">
+          When you're dealing with this issue, losing weight feels impossible.
+        </h2><p class="text-center text-emerald-700 font-semibold mb-6">(Here's why.)</p><div class="space-y-4 text-gray-700 text-base"><p>You've probably heard the classic weight-loss advice: "Eat less, move more."</p><p>And maybe you're already doing that – sticking to your routine, eating healthily, and exercising regularly.</p><p>Some people become so desperate they try extreme diets, fasting, HIIT workouts or intense weightlifting.</p><p>Yet the stubborn fat refuses to go.</p><p>The reason for this is actually quite simple.</p><p>It's not about how many calories you eat or how often you exercise.</p><p>There's a hidden block in the body that scientists call metabolic syndrome.</p></div></div></section><!-- Metabolic Syndrome Explained --><section id="metabolic-syndrome-explained" class="py-14 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"><h2 class="text-2xl sm:text-3xl font-extrabold mb-2">What is metabolic syndrome, how does it work – and why haven't you heard of it until now?</h2><p class="text-base text-gray-700">Let me explain with a simple analogy.</p><div class="space-y-3 text-gray-700 text-base"><p>Imagine a motorway with two lanes. Even with heavy traffic, cars flow smoothly during the day.</p><p>But when one lane closes, congestion builds up quickly – and everything slows to a crawl.</p><p>That's exactly what happens in your body.</p><p>During the day, when you're active and moving, both "lanes" of your metabolism are open – your body efficiently converts food into energy.</p><p>In the evening, however, things slow down. Metabolism shifts down a gear. It's like shutting one (or both) lanes – traffic comes to a standstill.</p><p>Scientists refer to this as metabolic syndrome.</p><p>It means the calories you consume in the evening are no longer converted into energy – instead, they're stored as fat.</p><p>Now, think about how most of us spend our evenings…</p><p>Dinner, followed by snacks in front of the TV – crisps, chocolate, nuts, maybe a glass of wine…</p><p>But all of that? It ends up stored in the body – not as energy, but as fat.</p><p>And unfortunately, those calories only have one destination: belly, hips, thighs and bum.</p></div><div class="pt-4 border-t border-gray-200 space-y-3 text-gray-700 text-base"><p>So, what can you do if you want to avoid this fat build-up?</p><p>Going back to the motorway example – you could stop the traffic completely. That would mean cutting out evening meals and snacks entirely.</p><p>But let's be honest…how realistic is that in the long run?</p><p>Exactly. So here's a better option: create a detour.</p><p>Just like road crews do when they close a major route.</p></div></div></section><!-- Calorie Bypass --><section id="calorie-bypass" class="py-14 sm:py-16 bg-gray-50"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-xl sm:text-2xl font-extrabold text-center mb-1">So the key question is:</h2><p class="text-center text-emerald-700 font-semibold mb-6">"How do you create a calorie bypass?"</p><div class="space-y-4 text-gray-700 text-base"><p>A few years ago, scientists discovered how to do exactly that inside the body – how to create a "calorie bypass" that lets excess calories leave the body instead of settling around the waist.</p><p>This means your body can burn off surplus calories – even while you sleep.</p><p>And the best part?</p><p>You can still enjoy your evening treats – snacks, fizzy drinks – and lose weight at the same time.</p><p>While others are sweating it out or eating nothing but salads, you can keep enjoying your favourite foods – and still see results.</p><p>I'll reveal this breakthrough Saharan ingredient shortly.</p><p>But first – let's be clear:</p></div></div></section><!-- Health Benefits Section --><section id="health-benefits" class="py-14 sm:py-16 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-3xl mx-auto text-center mb-10"><h2 class="text-2xl sm:text-3xl font-extrabold mb-3">WHY IS KEEPING FIT IMPORTANT (BESIDES LOOKING ATTRACTIVE, OF COURSE)?</h2><p class="text-base sm:text-lg text-gray-700">Looking great is just one of the many reasons why staying in shape matters – your overall wellbeing depends on it too:</p></div><div class="grid md:grid-cols-2 gap-6"><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6"><h3 class="text-lg font-bold mb-2">A boost in self-confidence</h3><p class="text-sm text-gray-700">Nothing chips away at your confidence like stubborn body fat. A slimmer, more defined physique can improve how you see yourself – and boost self-esteem. When you feel good in your own skin, it shows. You become more approachable, more confident, and more empowered to build meaningful relationships – both personal and professional.</p></div><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6"><h3 class="text-lg font-bold mb-2">Healthier blood pressure</h3><p class="text-sm text-gray-700">Keeping lean also means looking after your heart. Carrying excess weight puts additional strain on the heart – staying fit helps reduce this burden, supporting better cardiovascular health.</p></div><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6"><h3 class="text-lg font-bold mb-2">Lower risk of diabetes</h3><p class="text-sm text-gray-700">Maintaining a healthy weight significantly reduces your risk of developing type 2 diabetes. When your weight is in check, your cells are better able to respond to insulin – helping stabilise blood glucose levels.</p></div><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6"><h3 class="text-lg font-bold mb-2">Less strain on joints</h3><p class="text-sm text-gray-700">Extra weight puts pressure on your joints – leading to wear and tear over time. Keeping your weight down reduces this load, helping to prevent joint pain and mobility issues, especially as you get older.</p></div><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6 md:col-span-2"><h3 class="text-lg font-bold mb-2">Reduced risk of chronic disease</h3><p class="text-sm text-gray-700 mb-3">A healthy body weight is linked to a lower risk of several long-term health conditions, including:</p><ul class="list-disc pl-5 space-y-1 text-sm text-gray-700"><li>Cardiovascular disease: Fewer fatty deposits in the arteries reduce strain on the heart and support better circulation</li><li>Type 2 diabetes: Maintaining insulin sensitivity helps keep blood glucose levels stable</li><li>Cancer: Excess fat is associated with increased risk of several cancers, such as bowel, breast and kidney cancer</li></ul></div><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6 md:col-span-2"><h3 class="text-lg font-bold mb-2">Longer life expectancy</h3><p class="text-sm text-gray-700">Studies consistently show that a healthy weight can help you live longer – and enjoy a better quality of life along the way.</p></div></div></div></section><!-- Key Ingredients Hero --><section id="key-ingredients" class="py-14 sm:py-16 bg-amber-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-3xl mx-auto text-center mb-10"><h2 class="text-2xl sm:text-3xl font-extrabold mb-2">For a toned, fit body:</h2><p class="text-base sm:text-lg font-semibold text-emerald-800">THIS CACTUS – PLUS TWO OTHER POTENT INGREDIENTS – TRIGGER CALORIE BURNING WHILE YOU SLEEP.</p></div><div class="grid md:grid-cols-3 gap-6"><!-- Neopuntia --><div class="bg-white border border-amber-100 rounded-2xl p-5 sm:p-6 flex flex-col"><h3 class="text-lg font-bold mb-2">NEOPUNTIA™</h3><p class="text-sm text-gray-700 mb-3">Neopuntia™ is a clinically studied extract of Opuntia ficus-indica—a cactus native to the Sahara.</p><p class="text-sm font-semibold text-gray-800 mb-2">A clinical study shows that it:</p><ul class="list-disc pl-5 space-y-1 text-sm text-gray-700 mb-3"><li>Reduces fat absorption – up to 28% of dietary fat binds to Neopuntia™*</li><li>Increases fat excretion by 27%*</li><li>Supports healthy blood lipid levels*</li></ul><p class="text-xs text-gray-500 mt-auto">*Based on clinical studies. Individual results may vary.</p></div><!-- L-Carnitine --><div class="bg-white border border-amber-100 rounded-2xl p-5 sm:p-6 flex flex-col"><h3 class="text-lg font-bold mb-2">L-CARNITINE</h3><p class="text-sm text-gray-700 mb-3">L-carnitine is a naturally occurring compound derived from amino acids. It plays a key role in transporting fatty acids into cells, where they are burned for energy.</p><p class="text-sm text-gray-800">Ideal for those aiming to support fat metabolism and boost energy production.</p></div><!-- Valerian --><div class="bg-white border border-amber-100 rounded-2xl p-5 sm:p-6 flex flex-col"><h3 class="text-lg font-bold mb-2">VALERIAN ROOT</h3><p class="text-sm text-gray-700 mb-3">Valerian root is a traditional herbal extract valued for its calming effects. It helps improve sleep quality, which is essential for maintaining a healthy metabolism.</p><p class="text-sm text-gray-800">While best known for its relaxing properties, it may also support weight management indirectly—quality sleep plays a crucial role in regulating appetite and overall wellness.</p></div></div></div></section><!-- Critical Mistake / Neopuntia focus --><section id="critical-mistake" class="py-14 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"><h2 class="text-2xl sm:text-3xl font-extrabold">However, all these benefits can only be achieved on one condition: you must consume enough of this natural extract.</h2><h3 class="text-lg sm:text-xl font-bold text-emerald-800">SO, WHAT'S THE CRITICAL MISTAKE THAT MAKES METABOLIC SYNDROME WORSE?</h3><div class="space-y-4 text-gray-700 text-base"><p>During the day, our body uses the calories we consume and converts them into energy. But after 6 p.m., everything changes.</p><p>This is when the body's internal "calorie motorway" starts to close down, with fewer routes available for processing food.</p><p>But let's face it – we're only human. Busy schedules, late dinners, and hunger before bed are all part of modern life.</p><p>The problem? When your "calorie motorway" is already slowing down, those late-night calories get trapped – and stored as fat.</p><p>Fortunately, thanks to a fascinating discovery from the Sahara, there is now a simple way to bypass this bottleneck.</p><p>The solution? A cactus called Opuntia ficus-indica. This unique plant naturally binds "trapped" calories and helps direct them out of the body.</p><p>An extract of this cactus – Neopuntia™ – has been shown in multiple studies to deliver the following benefits:</p></div><ul class="list-disc pl-5 space-y-1 text-sm text-gray-800"><li>Reduces fat absorption by 28%*</li><li>Increases fat excretion by 27%*</li><li>Supports healthy blood lipid levels*</li></ul><p class="text-xs text-gray-500">*Based on clinical studies. Individual results may vary.</p></div></section><!-- Product CTA / Solution Introduction --><section id="product-cta" class="py-14 sm:py-16 bg-emerald-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center"><div class="space-y-4"><h2 class="text-2xl sm:text-3xl font-extrabold mb-2">KICK-START YOUR NIGHTTIME CALORIE BURN WITH GOLDEN TREE NIGHTTIME BURN!</h2><p class="text-base text-gray-700">Golden Tree NightTime Burn is a patented formula featuring 500 mg of Neopuntia™ – a natural extract from the Sahara cactus.</p><p class="text-base text-gray-700">This clinically studied ingredient is proven to bind to dietary fat and draw it to the bottom of the digestive system, allowing it to be eliminated naturally – rather than absorbed and stored as unwanted pounds.</p><div class="mt-4 bg-white border border-emerald-100 rounded-2xl p-5"><h3 class="text-lg font-bold mb-2">HOW CAN NIGHTTIME BURN SUPPORT YOUR GOALS?</h3><ul class="list-disc pl-5 space-y-1 text-sm text-gray-800 mb-3"><li>Reduces fat absorption by up to 28%*</li><li>Increases fat excretion by up to 27%*</li><li>Helps regulate blood lipid levels*</li><li>Promotes deeper, more restorative sleep*</li><li>Supports a balanced evening appetite*</li></ul><p class="text-xs text-gray-500">*Based on clinical studies. Individual results may vary.</p></div></div><div class="flex flex-col items-center lg:items-stretch gap-5"><div src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" class="bg-white rounded-2xl shadow-md border border-emerald-100 p-6 flex flex-col items-center"><div class="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mb-4"><span aria-hidden="true" class="text-3xl">💊</span></div><p class="text-sm text-gray-700 text-center mb-2">Take 2 capsules daily with a glass of water, 30 minutes before bedtime.</p><p class="text-xs text-gray-500 text-center">Consistent daily use helps the formula support your metabolism each night.</p></div><a href="#pricing" class="inline-flex justify-center items-center w-full px-8 py-3 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-semibold shadow-md">
+            See Available NightTime Burn Packages
+          </a><p class="text-xs text-gray-600 text-center">Secure checkout • No subscriptions • Manufactured in the EU</p></div></div></section><!-- Product Info Accordion (simple static block for now) --><section id="product-info" class="py-10 bg-white"><div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-gray-50 border border-gray-200 rounded-xl p-5 sm:p-6"><h3 class="text-base sm:text-lg font-bold mb-3">Informacije o izdelku +</h3><p class="text-sm text-gray-800 mb-3">Ingredients (per 1 capsule): Neopuntia™ (pure Opuntia ficus-indica powder) 500 mg, capsule (hydroxypropyl methylcellulose), L-carnitine tartrate 150 mg, valerian root extract 100 mg, niacin (vitamin B3) 8 mg, vitamin B6 0.7 mg.</p><p class="text-sm text-gray-800">DIRECTIONS: Take 2 capsules daily with a glass of water, 30 minutes before bedtime.</p></div></div></section><!-- Ingredients Detailed --><section id="ingredients-detailed" class="py-14 sm:py-16 bg-gray-50"><section id="ingredients-detailed-2" class="py-14 sm:py-16 bg-gray-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold text-center mb-8">NIGHTTIME BURN - INGREDIENTS</h2><div class="space-y-6"><!-- Neopuntia detailed --><div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start gap-4"><img src="https://og.gogoldentree.com/wp-content/uploads/2025/04/image-6364.png" alt="Neopuntia ingredient" draggable="true" class="w-16 h-16 sm:w-20 sm:h-20 object-cover flex-shrink-0 mx-auto sm:mx-0"><div id="iungh6"><h3 class="text-lg font-bold mb-2">NEOPUNTIA™</h3><p class="text-sm text-gray-700 mb-3">Neopuntia™ is an extract derived from Opuntia ficus-indica, a cactus native to the Sahara. Clinical studies confirm its effectiveness in supporting weight management:</p><ul class="list-disc pl-5 space-y-1 text-sm text-gray-800 mb-3"><li id="ihy7g1">Reduces fat absorption – binds up to 28% of dietary fat*</li><li id="ie3x47">Increases fat excretion by up to 27%*</li><li>Supports healthy cholesterol and blood lipid levels*</li></ul><p class="text-xs text-gray-500">*Based on clinical research. Individual results may vary.</p></div></div></div><!-- L-Carnitine detailed --><div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start gap-4"><img src="https://og.gogoldentree.com/wp-content/uploads/2025/04/image-5.png" alt="L-Carnitine ingredient" draggable="true" class="w-16 h-16 sm:w-20 sm:h-20 object-cover flex-shrink-0 mx-auto sm:mx-0"><div><h3 class="text-lg font-bold mb-2">L-CARNITINE</h3><p class="text-sm text-gray-700 mb-3">L-carnitine is an amino acid derivative that plays a key role in fat metabolism and energy production.</p><ul class="list-disc pl-5 space-y-1 text-sm text-gray-800 mb-3"><li>Enhances fat metabolism – accelerates the breakdown of long-chain fatty acids, especially during physical activity*</li><li>Boosts energy levels – particularly beneficial during exercise and recovery*</li><li>Supports cardiovascular health – helps maintain normal heart function*</li></ul><p class="text-xs text-gray-500">*Based on clinical research. Individual results may vary.</p></div></div></div><!-- Valerian detailed --><div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start gap-4"><img src="https://og.gogoldentree.com/wp-content/uploads/2025/04/image-6.png" alt="Valerian root ingredient" draggable="true" class="w-16 h-16 sm:w-20 sm:h-20 object-cover flex-shrink-0 mx-auto sm:mx-0"><div><h3 class="text-lg font-bold mb-2">VALERIAN ROOT</h3><p class="text-sm text-gray-700 mb-3">Valerian root (Valeriana officinalis) is traditionally known for its calming effects. It promotes deeper, more restful sleep – essential for metabolic health and overall wellbeing. Although primarily used for its relaxation benefits, it also supports weight management indirectly – poor sleep is linked to weight gain and disrupted appetite regulation.</p><ul class="list-disc pl-5 space-y-1 text-sm text-gray-800 mb-3"><li>Promotes restful sleep – essential for recovery and wellbeing*</li><li>Reduces stress and anxiety – helping to prevent emotional eating*</li><li>Supports a healthy appetite and metabolism through improved sleep quality*</li></ul><p class="text-xs text-gray-500">*Based on clinical research. Individual results may vary.</p></div></div></div><!-- Niacin --><div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start gap-4"><img src="https://via.placeholder.com/80" alt="Niacin Vitamin B3 ingredient" draggable="true" class="w-16 h-16 sm:w-20 sm:h-20 object-cover flex-shrink-0 mx-auto sm:mx-0"><div><h3 class="text-lg font-bold mb-2">NIACIN (Vitamin B3)</h3><p class="text-sm text-gray-700">Vitamin B3 or niacin boosts metabolism by helping to convert food into energy efficiently and improving circulation. It also plays a key role in cholesterol regulation, supporting a healthier metabolism, which promotes a more efficient fat-burning process and contributes to overall wellbeing.</p></div></div></div><!-- Vitamin B6 --><div class="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start gap-4"><img src="https://via.placeholder.com/80" alt="Vitamin B6 ingredient" draggable="true" class="w-16 h-16 sm:w-20 sm:h-20 object-cover flex-shrink-0 mx-auto sm:mx-0"><div><h3 class="text-lg font-bold mb-2">VITAMIN B6</h3><p class="text-sm text-gray-700">Vitamin B6 (pyridoxine) is essential for energy production and the metabolism of proteins and carbohydrates. It also plays a role in regulating hormones and mood, which can help manage emotional eating and reduce cravings for unhealthy snacks.</p></div></div></div></div></div></div></div></section></section><!-- Timeline / How It Works Over Time --><section id="timeline" class="py-14 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold text-center mb-8">WHAT CAN YOU EXPECT IN YOUR FIRST MONTH OF TAKING NIGHTTIME BURN?</h2><div class="space-y-4"><div class="flex flex-col sm:flex-row sm:items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl p-4"><div class="sm:w-32 font-semibold text-emerald-800">Day 3–4</div><p class="text-sm text-gray-800">Start noticing a boost in energy as the unique formula begins to kick-start your metabolism.</p></div><div class="flex flex-col sm:flex-row sm:items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl p-4"><div class="sm:w-32 font-semibold text-emerald-800">Day 7–11</div><p class="text-sm text-gray-800">Cravings for snacks and sugary treats begin to ease as appetite becomes easier to manage.</p></div><div class="flex flex-col sm:flex-row sm:items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl p-4"><div class="sm:w-32 font-semibold text-emerald-800">Day 16–18</div><p class="text-sm text-gray-800">Time to tighten your belt – you may already be down a notch! Keep going!</p></div><div class="flex flex-col sm:flex-row sm:items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl p-4"><div class="sm:w-32 font-semibold text-emerald-800">Day 19–28</div><p class="text-sm text-gray-800">The weight is coming off steadily. You're seeing results on the scales – without extreme diets or exhausting routines.</p></div></div></div></section><!-- Differentiation --><section id="differentiation" class="py-14 sm:py-16 bg-emerald-50"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold mb-4 text-center">WHAT MAKES NIGHTTIME BURN DIFFERENT FROM OTHER WEIGHT LOSS PRODUCTS?</h2><div class="space-y-4 text-base text-gray-700"><p>Not all weight loss solutions are created equal.</p><p>Golden Tree NightTime Burn stands out because it targets metabolic syndrome – the key reason calories get trapped and stored as fat in the evening.</p><p>By contrast, many weight loss products rely heavily on caffeine and throw in a mix of generic extracts without addressing the root cause.</p></div></div></section><!-- Testimonials Section --><section id="testimonials" class="py-14 sm:py-16 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8"><h2 class="text-2xl sm:text-3xl font-extrabold">What do customers say about their experience with NightTime Burn?</h2><div class="flex items-center text-sm text-gray-700"><span class="text-yellow-500 mr-2">★★★★★</span><span>Customers report improved sleep, energy and appetite control.</span></div></div><div class="grid md:grid-cols-2 gap-6 mb-10"><div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between"><p class="text-sm text-gray-800 italic mb-4">"I never imagined I'd lose weight in my sleep, but NightTime Burn genuinely works! The pounds are coming off without me having to give up my favourite evening snacks."</p><p class="text-sm font-semibold text-gray-900">Emma L.</p></div><div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between"><p class="text-sm text-gray-800 italic mb-4">"I've been waking up feeling more rested and full of energy. Plus, I'm not getting those annoying hunger pangs throughout the day anymore."</p><p class="text-sm font-semibold text-gray-900">Michael T.</p></div><div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between"><p class="text-sm text-gray-800 italic mb-4">"I've lost more weight in a month with NightTime Burn than I ever did on a diet. I was sceptical at first, but I'm absolutely thrilled with the results!"</p><p class="text-sm font-semibold text-gray-900">Sarah B.</p></div><div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between"><p class="text-sm text-gray-800 italic mb-4">"I'm really impressed – my sleep has improved loads and the weight is already coming off."</p><p class="text-sm font-semibold text-gray-900">Katie M.</p></div></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gray-800"><div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4">85% of customers say their metabolism improved and they burned fat more efficiently overnight</div><div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4">89% report waking up with more energy</div><div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4">91% noticed a significant improvement in sleep quality</div><div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4">88% experienced fewer cravings for sugary and fatty foods</div><div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4">90% say NightTime Burn has helped them maintain their ideal weight and body shape over time</div></div></div></section><!-- Pricing / Packages --><section id="pricing" class="py-14 sm:py-16 bg-gray-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-10"><h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Choose your NightTime Burn package</h2><p class="text-sm sm:text-base text-gray-700">Select the option that best fits your goals. Every order is covered by a 60-day money-back guarantee.</p></div><div class="grid lg:grid-cols-3 gap-6"><!-- Package 1: Single --><div class="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col justify-between"><div class="text-center mb-4"><span class="inline-block bg-gray-100 text-gray-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">Starter Supply</span><h3 class="text-lg font-bold mb-1">Try NightTime Burn</h3><p class="text-sm text-gray-600">Ideal if you're new and want to experience the first-month results.</p></div><div class="mt-4 border-t border-gray-200 pt-4 text-center"><p class="text-xs text-gray-600 mb-3">One-time purchase • No subscription</p><a href="#order" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-3 rounded-md">Start with 1 Bottle</a></div></div><!-- Package 2: Most Popular --><div class="bg-white border-2 border-emerald-500 rounded-2xl p-6 shadow-md flex flex-col justify-between relative"><div class="absolute -top-3 left-1/2 -translate-x-1/2"><span class="bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Most Popular</span></div><div class="text-center mb-4 mt-2"><span class="inline-block bg-emerald-50 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">Best Results</span><h3 class="text-lg font-bold mb-1">Commit to Your Transformation</h3><p class="text-sm text-gray-600">Recommended for full 60-day experience and visible body-shape changes.</p></div><div class="mt-4 border-t border-gray-200 pt-4 text-center"><p class="text-xs text-gray-700 mb-3">Maximise fat-binding and sleep-support benefits over 2+ months.</p><a href="#order" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-3 rounded-md">Order Recommended Package</a><p class="text-xs text-emerald-700 mt-2">Free EU shipping on multi-bottle orders</p></div></div><!-- Package 3: Maintenance --><div class="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col justify-between"><div class="text-center mb-4"><span class="inline-block bg-gray-100 text-gray-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">Maintenance</span><h3 class="text-lg font-bold mb-1">Maintain Your Ideal Shape</h3><p class="text-sm text-gray-600">Perfect once you've reached your goals and want to keep results long term.</p></div><div class="mt-4 border-t border-gray-200 pt-4 text-center"><p class="text-xs text-gray-600 mb-3">Flexible one-time purchase.</p><a href="#order" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-3 rounded-md">Choose Maintenance Option</a></div></div></div><p class="mt-6 text-xs text-center text-gray-600">Note: For precise pricing and promotions, see the checkout page.</p></div></section><!-- Guarantee Section --><section id="guarantee" class="py-14 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold mb-4 text-center">Order NightTime Burn today and experience powerful results – 100% risk-free!</h2><div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-7 space-y-4"><h3 class="text-lg sm:text-xl font-bold text-amber-900">YOUR ORDER IS PROTECTED BY A 60-DAY MONEY-BACK GUARANTEE.</h3><p class="text-sm text-gray-800">We want you to feel confident about trying NightTime Burn.</p><p class="text-sm text-gray-800">That's why your purchase is backed by our 60-day guarantee – so you can test it without any worry it won't deliver results.</p><div class="pt-2"><h4 class="text-base font-bold mb-2">How does it work?</h4><div class="space-y-2 text-sm text-gray-800"><p>Our unique formula needs time to deliver its full effect – typically around one month of consistent use.</p><p>Not impressed with the results? We'll give you a full refund.</p><p>If you're not satisfied with NightTime Burn after 60 days of regular and proper use, we'll give you your money back. Simple as that.</p><p>If you're not completely convinced, simply email us at info@gogoldentree.com. Our team will provide further assistance and, if needed, arrange a full refund.</p><p>We genuinely believe that ordering Golden Tree NightTime Burn is one of the smartest choices you can make for your health and wellbeing.</p></div></div></div></div></section><!-- Social Media Buzz --><section id="social-proof" class="py-14 sm:py-16 bg-amber-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold mb-6 text-center">Real buzz around NightTime Burn on social media:</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gray-800"><div class="bg-white border border-emerald-100 rounded-xl p-4">I didn't think it would work until I stepped on the scales tonight. I've lost a few pounds without even trying. This stuff is brilliant!</div><div class="bg-white border border-emerald-100 rounded-xl p-4">I wake up bursting with energy, and when my jeans feel loose, I can't help but smile. Who knew sleeping could help you lose weight?</div><div class="bg-white border border-emerald-100 rounded-xl p-4">Three weeks in and the difference isn't just in the mirror. My cravings for greasy foods are gone and I feel lighter overall.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">It's been a month now and even my friends have noticed. The compliments keep coming and I've never felt better.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">Just when I thought nothing would shift the weight, I found NightTime Burn. The inches are melting away and I'm thrilled.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">Who would have thought you could burn fat while sleeping? Turns out, you can! I'm living proof – absolutely buzzing with the results.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">I was sceptical at first, but now I'm convinced. I've squeezed back into my old clothes and my energy levels are through the roof.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">It's become a must in my evening routine. Easy, effective, and the results speak for themselves.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">I'd been searching for something that works without overhauling my entire lifestyle – and this is it!</div><div class="bg-white border border-emerald-100 rounded-xl p-4">It's honestly amazing how something so simple can make such a difference.</div><div class="bg-white border border-emerald-100 rounded-xl p-4">The capsules do work, but I'm also being mindful with my meals and staying active. That said, they've definitely given me that extra push I needed.</div></div></div></section><!-- FAQ Section --><section id="faq" class="py-14 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold mb-6 text-center">FREQUENTLY ASKED QUESTIONS</h2><div class="space-y-4"><details open="" class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">How does NightTime Burn work?</summary><p class="mt-2 text-sm text-gray-800">Our bodies absorb most fat during the night. NightTime Burn harnesses the clinically proven power of Neopuntia™, a natural extract from the Sahara cactus. This unique Sahara cactus extract acts like a calorie bypass, helping the body eliminate excess fat instead of storing it around the belly, hips and thighs.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">What ingredients does NightTime Burn contain?</summary><p class="mt-2 text-sm text-gray-800 whitespace-pre-line">NightTime Burn is made with three carefully selected natural ingredients that work together to promote fat metabolism and restful sleep:
+
+Neopuntia™ (Opuntia ficus-indica) – Clinically shown to reduce fat absorption by 28%, increase fat excretion by 27%, and support healthy blood lipid levels.*
+
+L-carnitine: An amino acid derivative that plays a key role in energy production and fat metabolism.
+
+Valerian root: Known for its calming effect and support for restful sleep. Better sleep is linked to healthier metabolism and balanced appetite.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">What if the product doesn't meet my expectations?</summary><p class="mt-2 text-sm text-gray-800">Every NightTime Burn order is covered by our 60-day money-back guarantee. If you're not satisfied for any reason, simply return the product – even if you've used it all – and we'll refund your purchase. Trying it is 100% risk-free.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">Will I be charged anything after ordering NightTime Burn?</summary><p class="mt-2 text-sm text-gray-800">No. This is a one-time purchase – there are no hidden fees or automatic subscriptions. You'll only receive what you order.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">Can I take NightTime Burn alongside other food supplements?</summary><p class="mt-2 text-sm text-gray-800">Yes. NightTime Burn can be safely taken with most other supplements and is easy to incorporate into your daily routine.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">Is the product made in Europe?</summary><p class="mt-2 text-sm text-gray-800">Yes, all Golden Tree products are manufactured in the EU to the highest quality and safety standards.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">Can I use NightTime Burn if I have a medical condition?</summary><p class="mt-2 text-sm text-gray-800">The ingredients are natural and generally well tolerated. However, if you have a medical condition or are taking prescription medication, it's always best to check with your GP first. You can take the bottle with you to your appointment so your doctor can check the ingredient list. We do not recommend NightTime Burn if you are pregnant, breastfeeding or under 18.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">How should I take NightTime Burn?</summary><p class="mt-2 text-sm text-gray-800">For best results, take 2 capsules daily with a glass of water, around 30 minutes before bedtime.</p></details><details class="bg-gray-50 border border-gray-200 rounded-xl p-4"><summary class="font-semibold text-sm cursor-pointer">How long does one bottle of NightTime Burn last?</summary><p class="mt-2 text-sm text-gray-800">One bottle contains 30 capsules – a 15-day supply when taken as directed.</p></details></div></div></section><!-- Quality Standards --><section id="quality-standards" class="py-14 sm:py-16 bg-gray-50"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-2xl sm:text-3xl font-extrabold mb-4 text-center">The finest ingredients, produced to the highest standards.</h2><div class="space-y-3 text-base text-gray-700"><p>Every product you find in the Golden Tree online shop has been carefully developed by our team of experts using the latest scientific research.</p><p>The ingredients in our products are rigorously tested in independent laboratories. Some ingredients are even patented, which guarantees the highest possible quality and efficacy.</p><p>Our food supplements are manufactured in a state-of-the-art facility that ensures a sterile and technologically advanced production process – meeting the strictest EU standards.</p></div></div></section><!-- Final CTA --><section id="order" class="py-14 sm:py-16 bg-emerald-600"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"><h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Ready to burn fat while you sleep?</h2><p class="text-sm sm:text-base mb-6">Support your metabolism, enjoy deeper sleep and wake up feeling lighter – backed by a 60-day money-back guarantee.</p><a href="#pricing" class="inline-flex justify-center items-center px-10 py-3 rounded-md bg-white text-emerald-700 font-semibold text-sm sm:text-base shadow-md hover:bg-amber-50">
+          Get NightTime Burn Now
+        </a><p class="mt-3 text-xs text-emerald-100">Secure payment • One-time purchase • No hidden fees</p></div></section><!-- Footer --><footer class="bg-gray-900 text-gray-400 text-xs"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-center sm:text-left">© <span>Golden Tree</span>. All rights reserved.</p><div class="flex flex-wrap justify-center gap-4"><a href="#" class="hover:text-white">Privacy Policy</a><a href="#" class="hover:text-white">Terms &amp; Conditions</a><a href="#faq" class="hover:text-white">Support</a></div></div></footer></div></body></html>
+</body>
+</html>
