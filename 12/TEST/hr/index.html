@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Test - TEST</title>
+  <style>
+* { box-sizing: border-box; } body {margin: 0;}body.gjs-outlines-active [data-variable]{outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;outline-offset:-2px;position:relative;}body.gjs-outlines-active [data-variable]::before{content:"${" attr(data-variable) "}";position:absolute;top:-22px;left:0px;background-color:rgb(97, 218, 251);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;text-wrap-mode:nowrap;white-space-collapse:collapse;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}
+/*! tailwindcss v4.1.7 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-emerald-50: oklch(97.9% 0.021 166.113);
+    --color-emerald-200: oklch(90.5% 0.093 164.15);
+    --color-emerald-300: oklch(84.5% 0.143 164.978);
+    --color-emerald-400: oklch(76.5% 0.177 163.223);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-emerald-800: oklch(43.2% 0.095 166.913);
+    --color-indigo-50: oklch(96.2% 0.018 272.314);
+    --color-indigo-100: oklch(93% 0.034 272.788);
+    --color-indigo-200: oklch(87% 0.065 274.039);
+    --color-indigo-600: oklch(51.1% 0.262 276.966);
+    --color-indigo-700: oklch(45.7% 0.24 277.023);
+    --color-indigo-800: oklch(39.8% 0.195 277.366);
+    --color-slate-50: oklch(98.4% 0.003 247.858);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-900: oklch(21% 0.034 264.665);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --container-xl: 36rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-5xl: 64rem;
+    --container-6xl: 72rem;
+    --container-7xl: 80rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --tracking-wide: 0.025em;
+    --leading-snug: 1.375;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .-top-3 {
+    top: calc(var(--spacing) * -3);
+  }
+  .-top-6 {
+    top: calc(var(--spacing) * -6);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .-right-2 {
+    right: calc(var(--spacing) * -2);
+  }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
+  .z-30 {
+    z-index: 30;
+  }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-52 {
+    height: calc(var(--spacing) * 52);
+  }
+  .h-56 {
+    height: calc(var(--spacing) * 56);
+  }
+  .h-full {
+    height: 100%;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+  .w-52 {
+    width: calc(var(--spacing) * 52);
+  }
+  .w-56 {
+    width: calc(var(--spacing) * 56);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
+  .max-w-5xl {
+    max-width: var(--container-5xl);
+  }
+  .max-w-6xl {
+    max-width: var(--container-6xl);
+  }
+  .max-w-7xl {
+    max-width: var(--container-7xl);
+  }
+  .max-w-\[220px\] {
+    max-width: 220px;
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .space-y-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-1\.5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-emerald-200 {
+    border-color: var(--color-emerald-200);
+  }
+  .border-emerald-400 {
+    border-color: var(--color-emerald-400);
+  }
+  .border-indigo-100 {
+    border-color: var(--color-indigo-100);
+  }
+  .border-indigo-200 {
+    border-color: var(--color-indigo-200);
+  }
+  .border-slate-100 {
+    border-color: var(--color-slate-100);
+  }
+  .border-slate-200 {
+    border-color: var(--color-slate-200);
+  }
+  .border-slate-500 {
+    border-color: var(--color-slate-500);
+  }
+  .border-slate-600 {
+    border-color: var(--color-slate-600);
+  }
+  .bg-emerald-50 {
+    background-color: var(--color-emerald-50);
+  }
+  .bg-emerald-400 {
+    background-color: var(--color-emerald-400);
+  }
+  .bg-emerald-500 {
+    background-color: var(--color-emerald-500);
+  }
+  .bg-indigo-50 {
+    background-color: var(--color-indigo-50);
+  }
+  .bg-indigo-600 {
+    background-color: var(--color-indigo-600);
+  }
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-slate-700\/60 {
+    background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-700) 60%, transparent);
+    }
+  }
+  .bg-slate-800 {
+    background-color: var(--color-slate-800);
+  }
+  .bg-slate-800\/70 {
+    background-color: color-mix(in srgb, oklch(27.9% 0.041 260.031) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-800) 70%, transparent);
+    }
+  }
+  .bg-slate-900 {
+    background-color: var(--color-slate-900);
+  }
+  .bg-slate-950 {
+    background-color: var(--color-slate-950);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-gradient-to-b {
+    --tw-gradient-position: to bottom in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-slate-900 {
+    --tw-gradient-from: var(--color-slate-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-slate-800 {
+    --tw-gradient-to: var(--color-slate-800);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+  .leading-snug {
+    --tw-leading: var(--leading-snug);
+    line-height: var(--leading-snug);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .text-amber-400 {
+    color: var(--color-amber-400);
+  }
+  .text-emerald-300 {
+    color: var(--color-emerald-300);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-emerald-800 {
+    color: var(--color-emerald-800);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
+  .text-indigo-700 {
+    color: var(--color-indigo-700);
+  }
+  .text-indigo-800 {
+    color: var(--color-indigo-800);
+  }
+  .text-slate-100 {
+    color: var(--color-slate-100);
+  }
+  .text-slate-200 {
+    color: var(--color-slate-200);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-900 {
+    color: var(--color-slate-900);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xl {
+    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .hover\:bg-emerald-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-emerald-600);
+      }
+    }
+  }
+  .hover\:bg-indigo-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-indigo-700);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .sm\:inline-block {
+    @media (width >= 40rem) {
+      display: inline-block;
+    }
+  }
+  .sm\:h-64 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 64);
+    }
+  }
+  .sm\:w-32 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 32);
+    }
+  }
+  .sm\:w-40 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 40);
+    }
+  }
+  .sm\:w-64 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 64);
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:items-start {
+    @media (width >= 40rem) {
+      align-items: flex-start;
+    }
+  }
+  .sm\:space-y-0 {
+    @media (width >= 40rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
+  .sm\:space-x-4 {
+    @media (width >= 40rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+        margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+      }
+    }
+  }
+  .sm\:p-6 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:p-8 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 8);
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:py-12 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 12);
+    }
+  }
+  .sm\:py-16 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+  .sm\:text-left {
+    @media (width >= 40rem) {
+      text-align: left;
+    }
+  }
+  .sm\:text-right {
+    @media (width >= 40rem) {
+      text-align: right;
+    }
+  }
+  .sm\:text-2xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-base {
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .sm\:text-sm {
+    @media (width >= 40rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
+  .sm\:text-xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .sm\:text-xs {
+    @media (width >= 40rem) {
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
+  }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:mt-0 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
+  .lg\:grid-cols-2 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-5 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .lg\:items-center {
+    @media (width >= 64rem) {
+      align-items: center;
+    }
+  }
+  .lg\:justify-between {
+    @media (width >= 64rem) {
+      justify-content: space-between;
+    }
+  }
+  .lg\:gap-8 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:py-20 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:text-4xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}
+
+  </style>
+</head>
+<body>
+<html><head></head><body id="i2hg"><div class="min-h-screen flex flex-col"><header class="w-full border-b bg-white sticky top-0 z-30"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"><div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-xl"><span data-variable="header.logo_text" data-variable-type="text">GT</span></div><div><h1 data-variable="header.brand_name" data-variable-type="heading" class="text-lg font-semibold">Golden Tree</h1><p data-variable="header.product_name" data-variable-type="text" class="text-xs text-gray-500">NightTime Burn</p></div></div><a href="#pricing" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-md text-sm font-semibold shadow"><span data-variable="header.cta_text" data-variable-type="button">Order NightTime Burn</span></a></div></header><main class="flex-1"><!-- HERO SECTION --><section id="hero" class="bg-slate-50 py-12 sm:py-16 lg:py-20"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center"><div><div class="inline-flex items-center space-x-2 bg-white border border-indigo-100 px-4 py-2 rounded-full mb-5 shadow-sm"><span data-variable="trust.badge_dot" data-variable-type="label" class="w-2 h-2 rounded-full bg-emerald-500"></span><span data-variable="trust.badge_1" data-variable-type="label" class="text-xs font-semibold uppercase tracking-wide text-indigo-700">Scientifically backed Sahara cactus formula</span></div><h2 data-variable="hero.headline_1" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-gray-900 mb-4">
+              How to Get Rid of Belly Fat? Scientists Have Found a Simple Way to Burn Fat While You Sleep
+            </h2><h3 data-variable="hero.headline_2" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-indigo-800 mb-3">
+              Confirmed: Metabolic Syndrome Is the Main Cause of Stubborn Belly Fat – But Is There a Solution?
+            </h3><p data-variable="hero.headline_3" data-variable-type="heading" class="text-base sm:text-lg text-gray-800 mb-6">
+              Once Metabolic Syndrome Is Addressed, Belly Fat Begins to Melt Away – This Simple Evening Trick Could Change Everything
+            </p><p data-variable="hero.intro_paragraph_1" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-2">
+              If you're struggling to shed those extra pounds, this could be life-changing news.
+            </p><p data-variable="hero.intro_paragraph_2" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-6">
+              Metabolic scientists are calling it the discovery of the decade – a way to activate fat-burning while you sleep.
+            </p><div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 mb-4"><a href="#pricing" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-7 py-3 rounded-md font-semibold shadow-lg"><span data-variable="hero.cta_text" data-variable-type="button">Start Your NightTime Burn Today</span></a><p data-variable="trust.customer_count" data-variable-type="text" class="text-xs sm:text-sm text-gray-600">
+                85% of customers report more efficient overnight fat burning
+              </p></div><div class="flex flex-wrap items-center gap-4 text-xs text-gray-600"><div class="flex items-center space-x-2"><span data-variable="trust.rating_stars" data-variable-type="label" class="text-amber-400">★★★★★</span><span data-variable="trust.rating" data-variable-type="text">4.8/5 based on verified customer feedback</span></div><span data-variable="trust.guarantee" data-variable-type="text" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full"><span data-variable="trust.guarantee_icon" data-variable-type="label">✓</span><span data-variable="trust.guarantee_text" data-variable-type="label">60-day money-back guarantee</span></span></div></div><div class="relative flex justify-center"><div class="absolute -top-6 -right-2 bg-white shadow-lg rounded-lg px-4 py-3 text-xs sm:text-sm text-gray-700 max-w-[220px] border border-indigo-100"><p data-variable="hero.badge_callout" data-variable-type="text">
+                Burn fat while you sleep by targeting metabolic syndrome with a clinically studied Sahara cactus extract.
+              </p></div><div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center max-w-md w-full border border-slate-100"><div class="w-52 h-52 sm:w-64 sm:h-64 bg-slate-100 rounded-2xl flex items-center justify-center mb-6 overflow-hidden"><img data-variable="hero.main_image" data-variable-type="image" src="https://via.placeholder.com/320x320?text=NightTime+Burn" alt="Golden Tree NightTime Burn bottle" class="w-full h-full object-cover"></div><h4 data-variable="hero.product_card_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2 text-center">
+                NightTime Burn – Burn Fat While You Sleep
+              </h4><p data-variable="hero.product_card_text" data-variable-type="text" class="text-sm text-gray-600 text-center mb-4">
+                Features 500 mg of Neopuntia™ – a clinically studied Sahara cactus extract that supports fat metabolism overnight.
+              </p><a href="#pricing" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-md text-sm font-semibold w-full"><span data-variable="hero.secondary_cta_text" data-variable-type="button">See Packages &amp; Savings</span></a><p data-variable="hero.security_text" data-variable-type="text" class="mt-2 text-[11px] text-gray-500 text-center">
+                Secure EU production • Clinically supported ingredients
+              </p></div></div></div></section><!-- PROBLEM SECTION --><section id="problem" class="py-12 sm:py-16 bg-white border-t border-b border-slate-100"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="problem.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
+            The Real Culprit Behind Stubborn Belly Fat
+          </h2><p data-variable="problem.paragraph_1" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-2 text-center">
+            So how does it work?
+          </p><p data-variable="problem.paragraph_2" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-2 text-center">
+            It turns out that excess weight isn't just about age, genetics or lifestyle.
+          </p><p data-variable="problem.paragraph_3" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-2 text-center">
+            The real culprit? Metabolic syndrome – a condition that encourages stubborn fat to accumulate in the most frustrating places.
+          </p><p data-variable="problem.paragraph_4" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-6 text-center">
+            Wondering if you might have it? Here are some of the telltale signs:
+          </p><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><div class="bg-slate-50 rounded-xl p-4 border border-slate-100"><p data-variable="problem.symptom_1" data-variable-type="list_item" class="text-sm sm:text-base text-gray-800 font-medium">
+                Difficulty losing weight
+              </p></div><div class="bg-slate-50 rounded-xl p-4 border border-slate-100"><p data-variable="problem.symptom_2" data-variable-type="list_item" class="text-sm sm:text-base text-gray-800 font-medium">
+                Unexplained weight gain
+              </p></div><div class="bg-slate-50 rounded-xl p-4 border border-slate-100"><p data-variable="problem.symptom_3" data-variable-type="list_item" class="text-sm sm:text-base text-gray-800 font-medium">
+                A sluggish metabolism
+              </p></div><div class="bg-slate-50 rounded-xl p-4 border border-slate-100"><p data-variable="problem.symptom_4" data-variable-type="list_item" class="text-sm sm:text-base text-gray-800 font-medium">
+                Constant fatigue (even after a full night's sleep)
+              </p></div><div class="bg-slate-50 rounded-xl p-4 border border-slate-100"><p data-variable="problem.symptom_5" data-variable-type="list_item" class="text-sm sm:text-base text-gray-800 font-medium">
+                Low energy levels throughout the day
+              </p></div></div></div></section><!-- WHY WEIGHT LOSS IS HARD --><section id="why-weight-loss-is-hard" class="py-12 sm:py-16 bg-slate-50"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="why.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 text-center">
+            When you're dealing with this issue, losing weight feels impossible.
+          </h2><h3 data-variable="why.section_subtitle" data-variable-type="heading" class="text-base sm:text-lg text-indigo-700 mb-6 text-center">
+            (Here's why.)
+          </h3><div class="space-y-3 text-base sm:text-lg text-gray-700"><p data-variable="why.paragraph_1" data-variable-type="text">You've probably heard the classic weight-loss advice: "Eat less, move more."</p><p data-variable="why.paragraph_2" data-variable-type="text">And maybe you're already doing that – sticking to your routine, eating healthily, and exercising regularly.</p><p data-variable="why.paragraph_3" data-variable-type="text">Some people become so desperate they try extreme diets, fasting, HIIT workouts or intense weightlifting.</p><p data-variable="why.paragraph_4" data-variable-type="text">Yet the stubborn fat refuses to go.</p><p data-variable="why.paragraph_5" data-variable-type="text">The reason for this is actually quite simple.</p><p data-variable="why.paragraph_6" data-variable-type="text">It's not about how many calories you eat or how often you exercise.</p><p data-variable="why.paragraph_7" data-variable-type="text">There's a hidden block in the body that scientists call metabolic syndrome.</p></div></div></section><!-- METABOLIC SYNDROME EXPLAINED --><section id="metabolic-syndrome-explained" class="py-12 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="metabolic.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
+            What is metabolic syndrome, how does it work – and why haven't you heard of it until now?
+          </h2><p data-variable="metabolic.intro" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-6 text-center">
+            Let me explain with a simple analogy.
+          </p><div class="grid lg:grid-cols-2 gap-8 items-start mb-10"><div class="space-y-3 text-gray-700 text-base sm:text-lg"><p data-variable="metabolic.analogy_paragraph_1" data-variable-type="text">Imagine a motorway with two lanes. Even with heavy traffic, cars flow smoothly during the day.</p><p data-variable="metabolic.analogy_paragraph_2" data-variable-type="text">But when one lane closes, congestion builds up quickly – and everything slows to a crawl.</p><p data-variable="metabolic.analogy_paragraph_3" data-variable-type="text">That's exactly what happens in your body.</p><p data-variable="metabolic.analogy_paragraph_4" data-variable-type="text">During the day, when you're active and moving, both "lanes" of your metabolism are open – your body efficiently converts food into energy.</p><p data-variable="metabolic.analogy_paragraph_5" data-variable-type="text">In the evening, however, things slow down. Metabolism shifts down a gear. It's like shutting one (or both) lanes – traffic comes to a standstill.</p><p data-variable="metabolic.analogy_paragraph_6" data-variable-type="text">Scientists refer to this as metabolic syndrome.</p><p data-variable="metabolic.analogy_paragraph_7" data-variable-type="text">It means the calories you consume in the evening are no longer converted into energy – instead, they're stored as fat.</p></div><div class="space-y-3 text-gray-700 text-base sm:text-lg"><p data-variable="metabolic.analogy_paragraph_8" data-variable-type="text">Now, think about how most of us spend our evenings…</p><p data-variable="metabolic.analogy_paragraph_9" data-variable-type="text">Dinner, followed by snacks in front of the TV – crisps, chocolate, nuts, maybe a glass of wine…</p><p data-variable="metabolic.analogy_paragraph_10" data-variable-type="text">But all of that? It ends up stored in the body – not as energy, but as fat.</p><p data-variable="metabolic.analogy_paragraph_11" data-variable-type="text">And unfortunately, those calories only have one destination: belly, hips, thighs and bum.</p></div></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8"><h3 data-variable="metabolic.solution_intro_title" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-4">
+              So, what can you do if you want to avoid this fat build-up?
+            </h3><div class="space-y-3 text-sm sm:text-base text-gray-700"><p data-variable="metabolic.solution_paragraph_1" data-variable-type="text">So, what can you do if you want to avoid this fat build-up?</p><p data-variable="metabolic.solution_paragraph_2" data-variable-type="text">Going back to the motorway example – you could stop the traffic completely. That would mean cutting out evening meals and snacks entirely.</p><p data-variable="metabolic.solution_paragraph_3" data-variable-type="text">But let's be honest…how realistic is that in the long run?</p><p data-variable="metabolic.solution_paragraph_4" data-variable-type="text">Exactly. So here's a better option: create a detour.</p><p data-variable="metabolic.solution_paragraph_5" data-variable-type="text">Just like road crews do when they close a major route.</p></div></div></div></section><!-- CALORIE BYPASS SECTION --><section id="calorie-bypass" class="py-12 sm:py-16 bg-slate-50"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="calorie_bypass.section_title" data-variable-type="heading" class="text-xl sm:text-2xl font-bold text-gray-900 mb-1 text-center">
+            So the key question is:
+          </h2><h3 data-variable="calorie_bypass.section_subtitle" data-variable-type="heading" class="text-xl sm:text-2xl font-semibold text-indigo-700 mb-6 text-center">
+            "How do you create a calorie bypass?"
+          </h3><div class="space-y-3 text-base sm:text-lg text-gray-700 mb-8"><p data-variable="calorie_bypass.paragraph_1" data-variable-type="text">A few years ago, scientists discovered how to do exactly that inside the body – how to create a "calorie bypass" that lets excess calories leave the body instead of settling around the waist.</p><p data-variable="calorie_bypass.paragraph_2" data-variable-type="text">This means your body can burn off surplus calories – even while you sleep.</p><p data-variable="calorie_bypass.paragraph_3" data-variable-type="text">And the best part?</p><p data-variable="calorie_bypass.paragraph_4" data-variable-type="text">You can still enjoy your evening treats – snacks, fizzy drinks – and lose weight at the same time.</p><p data-variable="calorie_bypass.paragraph_5" data-variable-type="text">While others are sweating it out or eating nothing but salads, you can keep enjoying your favourite foods – and still see results.</p><p data-variable="calorie_bypass.paragraph_6" data-variable-type="text">I'll reveal this breakthrough Saharan ingredient shortly.</p><p data-variable="calorie_bypass.paragraph_7" data-variable-type="text">But first – let's be clear:</p></div></div></section><!-- HEALTH BENEFITS SECTION --><section id="health-benefits" class="py-12 sm:py-16 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="health_benefits.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3 text-center">
+            WHY IS KEEPING FIT IMPORTANT (BESIDES LOOKING ATTRACTIVE, OF COURSE)?
+          </h2><p data-variable="health_benefits.section_subtitle" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+            Looking great is just one of the many reasons why staying in shape matters – your overall wellbeing depends on it too:
+          </p><div class="grid md:grid-cols-2 gap-6 lg:gap-8"><div class="bg-slate-50 rounded-2xl p-6 border border-slate-100"><h3 data-variable="health_benefits.benefit_1_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2">
+                A boost in self-confidence
+              </h3><p data-variable="health_benefits.benefit_1_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Nothing chips away at your confidence like stubborn body fat. A slimmer, more defined physique can improve how you see yourself – and boost self-esteem. When you feel good in your own skin, it shows. You become more approachable, more confident, and more empowered to build meaningful relationships – both personal and professional.
+              </p></div><div class="bg-slate-50 rounded-2xl p-6 border border-slate-100"><h3 data-variable="health_benefits.benefit_2_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2">
+                Healthier blood pressure
+              </h3><p data-variable="health_benefits.benefit_2_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Keeping lean also means looking after your heart. Carrying excess weight puts additional strain on the heart – staying fit helps reduce this burden, supporting better cardiovascular health.
+              </p></div><div class="bg-slate-50 rounded-2xl p-6 border border-slate-100"><h3 data-variable="health_benefits.benefit_3_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2">
+                Lower risk of diabetes
+              </h3><p data-variable="health_benefits.benefit_3_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Maintaining a healthy weight significantly reduces your risk of developing type 2 diabetes. When your weight is in check, your cells are better able to respond to insulin – helping stabilise blood glucose levels.
+              </p></div><div class="bg-slate-50 rounded-2xl p-6 border border-slate-100"><h3 data-variable="health_benefits.benefit_4_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2">
+                Less strain on joints
+              </h3><p data-variable="health_benefits.benefit_4_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Extra weight puts pressure on your joints – leading to wear and tear over time. Keeping your weight down reduces this load, helping to prevent joint pain and mobility issues, especially as you get older.
+              </p></div><div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 md:col-span-2"><h3 data-variable="health_benefits.benefit_5_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2">
+                Reduced risk of chronic disease
+              </h3><p data-variable="health_benefits.benefit_5_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-3">
+                A healthy body weight is linked to a lower risk of several long-term health conditions, including:
+              </p><ul class="list-disc pl-5 space-y-1 text-sm sm:text-base text-gray-700"><li data-variable="health_benefits.benefit_5_subitem_1" data-variable-type="list_item">Cardiovascular disease: Fewer fatty deposits in the arteries reduce strain on the heart and support better circulation</li><li data-variable="health_benefits.benefit_5_subitem_2" data-variable-type="list_item">Type 2 diabetes: Maintaining insulin sensitivity helps keep blood glucose levels stable</li><li data-variable="health_benefits.benefit_5_subitem_3" data-variable-type="list_item">Cancer: Excess fat is associated with increased risk of several cancers, such as bowel, breast and kidney cancer</li></ul></div><div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 md:col-span-2"><h3 data-variable="health_benefits.benefit_6_title" data-variable-type="heading" class="text-lg font-semibold text-gray-900 mb-2">
+                Longer life expectancy
+              </h3><p data-variable="health_benefits.benefit_6_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Studies consistently show that a healthy weight can help you live longer – and enjoy a better quality of life along the way.
+              </p></div></div></div></section><!-- KEY INGREDIENTS HERO --><section id="key-ingredients" class="py-12 sm:py-16 bg-gradient-to-b from-slate-900 to-slate-800 text-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="lg:flex lg:items-center lg:justify-between mb-10 gap-8"><div class="max-w-xl"><h2 data-variable="ingredients_hero.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-extrabold mb-2">
+                For a toned, fit body:
+              </h2><p data-variable="ingredients_hero.section_subtitle" data-variable-type="text" class="text-base sm:text-lg text-slate-100 mb-4">
+                THIS CACTUS – PLUS TWO OTHER POTENT INGREDIENTS – TRIGGER CALORIE BURNING WHILE YOU SLEEP.
+              </p><p data-variable="ingredients_hero.lead_text" data-variable-type="text" class="text-sm sm:text-base text-slate-200">
+                NightTime Burn combines a clinically studied Sahara cactus extract with targeted metabolic and sleep-support nutrients to help you burn fat while you sleep.
+              </p></div><div class="mt-6 lg:mt-0 flex items-center justify-center"><div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-slate-700/60 border border-slate-500 flex items-center justify-center overflow-hidden"><img data-variable="ingredients_hero.main_image" data-variable-type="image" src="https://via.placeholder.com/260x260?text=Sahara+Cactus" alt="Sahara cactus used in Neopuntia" class="w-full h-full object-cover"></div></div></div><div class="grid md:grid-cols-3 gap-6"><div class="bg-slate-800/70 rounded-2xl p-5 border border-slate-600"><h3 data-variable="ingredients_hero.ingredient_1_name" data-variable-type="heading" class="text-lg font-semibold mb-2">
+                NEOPUNTIA™
+              </h3><p data-variable="ingredients_hero.ingredient_1_description" data-variable-type="text" class="text-sm sm:text-base text-slate-100 mb-2">
+                Neopuntia™ is a clinically studied extract of Opuntia ficus-indica—a cactus native to the Sahara.
+              </p><p data-variable="ingredients_hero.ingredient_1_study_intro" data-variable-type="text" class="text-sm text-slate-200 mb-2">
+                A clinical study shows that it:
+              </p><ul class="list-disc pl-5 space-y-1 text-sm text-slate-100 mb-2"><li data-variable="ingredients_hero.ingredient_1_benefit_1" data-variable-type="list_item">Reduces fat absorption – up to 28% of dietary fat binds to Neopuntia™*</li><li data-variable="ingredients_hero.ingredient_1_benefit_2" data-variable-type="list_item">Increases fat excretion by 27%*</li><li data-variable="ingredients_hero.ingredient_1_benefit_3" data-variable-type="list_item">Supports healthy blood lipid levels*</li></ul><p data-variable="ingredients_hero.ingredient_1_disclaimer" data-variable-type="text" class="text-[11px] text-slate-300">
+                *Based on clinical studies. Individual results may vary.
+              </p></div><div class="bg-slate-800/70 rounded-2xl p-5 border border-slate-600"><h3 data-variable="ingredients_hero.ingredient_2_name" data-variable-type="heading" class="text-lg font-semibold mb-2">
+                L-CARNITINE
+              </h3><p data-variable="ingredients_hero.ingredient_2_description" data-variable-type="text" class="text-sm sm:text-base text-slate-100 mb-2">
+                L-carnitine is a naturally occurring compound derived from amino acids. It plays a key role in transporting fatty acids into cells, where they are burned for energy.
+              </p><p data-variable="ingredients_hero.ingredient_2_benefit" data-variable-type="text" class="text-sm text-slate-200">
+                Ideal for those aiming to support fat metabolism and boost energy production.
+              </p></div><div class="bg-slate-800/70 rounded-2xl p-5 border border-slate-600"><h3 data-variable="ingredients_hero.ingredient_3_name" data-variable-type="heading" class="text-lg font-semibold mb-2">
+                VALERIAN ROOT
+              </h3><p data-variable="ingredients_hero.ingredient_3_description" data-variable-type="text" class="text-sm sm:text-base text-slate-100 mb-2">
+                Valerian root is a traditional herbal extract valued for its calming effects. It helps improve sleep quality, which is essential for maintaining a healthy metabolism.
+              </p><p data-variable="ingredients_hero.ingredient_3_benefit" data-variable-type="text" class="text-sm text-slate-200">
+                While best known for its relaxing properties, it may also support weight management indirectly—quality sleep plays a crucial role in regulating appetite and overall wellness.
+              </p></div></div></div></section><!-- CRITICAL MISTAKE SECTION --><section id="critical-mistake" class="py-12 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="critical.section_title_main" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
+            However, all these benefits can only be achieved on one condition: you must consume enough of this natural extract.
+          </h2><h3 data-variable="critical.section_title" data-variable-type="heading" class="text-base sm:text-lg text-indigo-700 font-semibold uppercase tracking-wide mb-6 text-center">
+            SO, WHAT'S THE CRITICAL MISTAKE THAT MAKES METABOLIC SYNDROME WORSE?
+          </h3><div class="space-y-3 text-base sm:text-lg text-gray-700 mb-6"><p data-variable="critical.paragraph_1" data-variable-type="text">During the day, our body uses the calories we consume and converts them into energy. But after 6 p.m., everything changes.</p><p data-variable="critical.paragraph_2" data-variable-type="text">This is when the body's internal "calorie motorway" starts to close down, with fewer routes available for processing food.</p><p data-variable="critical.paragraph_3" data-variable-type="text">But let's face it – we're only human. Busy schedules, late dinners, and hunger before bed are all part of modern life.</p><p data-variable="critical.paragraph_4" data-variable-type="text">The problem? When your "calorie motorway" is already slowing down, those late-night calories get trapped – and stored as fat.</p><p data-variable="critical.paragraph_5" data-variable-type="text">Fortunately, thanks to a fascinating discovery from the Sahara, there is now a simple way to bypass this bottleneck.</p><p data-variable="critical.paragraph_6" data-variable-type="text">The solution? A cactus called Opuntia ficus-indica. This unique plant naturally binds "trapped" calories and helps direct them out of the body.</p><p data-variable="critical.paragraph_7" data-variable-type="text">An extract of this cactus – Neopuntia™ – has been shown in multiple studies to deliver the following benefits:</p></div><ul class="list-disc pl-5 space-y-1 text-base text-gray-800 mb-3"><li data-variable="critical.benefit_1" data-variable-type="list_item">Reduces fat absorption by 28%*</li><li data-variable="critical.benefit_2" data-variable-type="list_item">Increases fat excretion by 27%*</li><li data-variable="critical.benefit_3" data-variable-type="list_item">Supports healthy blood lipid levels*</li></ul><p data-variable="critical.disclaimer" data-variable-type="text" class="text-[11px] text-gray-500 mb-2">
+            *Based on clinical studies. Individual results may vary.
+          </p></div></section><!-- PRODUCT CTA / SOLUTION SECTION --><section id="product-cta" class="py-12 sm:py-16 bg-slate-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center"><div><h2 data-variable="solution.headline" data-variable-type="heading" class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
+              KICK-START YOUR NIGHTTIME CALORIE BURN WITH GOLDEN TREE NIGHTTIME BURN!
+            </h2><p data-variable="solution.description_1" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-3">
+              Golden Tree NightTime Burn is a patented formula featuring 500 mg of Neopuntia™ – a natural extract from the Sahara cactus.
+            </p><p data-variable="solution.description_2" data-variable-type="text" class="text-base sm:text-lg text-gray-700 mb-5">
+              This clinically studied ingredient is proven to bind to dietary fat and draw it to the bottom of the digestive system, allowing it to be eliminated naturally – rather than absorbed and stored as unwanted pounds.
+            </p><div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 mb-6 shadow-sm"><h3 data-variable="solution.benefit_block_title" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
+                HOW CAN NIGHTTIME BURN SUPPORT YOUR GOALS?
+              </h3><ul class="list-disc pl-5 space-y-1.5 text-sm sm:text-base text-gray-800 mb-3"><li data-variable="solution.benefit_1" data-variable-type="list_item">Reduces fat absorption by up to 28%*</li><li data-variable="solution.benefit_2" data-variable-type="list_item">Increases fat excretion by up to 27%*</li><li data-variable="solution.benefit_3" data-variable-type="list_item">Helps regulate blood lipid levels*</li><li data-variable="solution.benefit_4" data-variable-type="list_item">Promotes deeper, more restorative sleep*</li><li data-variable="solution.benefit_5" data-variable-type="list_item">Supports a balanced evening appetite*</li></ul><p data-variable="solution.benefit_disclaimer" data-variable-type="text" class="text-[11px] text-gray-500">
+                *Based on clinical studies. Individual results may vary.
+              </p></div><a href="#pricing" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-md font-semibold shadow-md"><span data-variable="solution.cta_text" data-variable-type="button">See NightTime Burn Packages</span></a></div><div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-slate-100"><div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-6"><div class="flex-1"><img data-variable="solution.main_image" data-variable-type="image" src="https://via.placeholder.com/320x260?text=NightTime+Burn+Bottle" alt="Golden Tree NightTime Burn product" class="w-full rounded-xl object-cover bg-slate-100"></div><div class="sm:w-40 flex flex-col space-y-3"><div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-xs text-emerald-800"><p data-variable="solution.highlight_1" data-variable-type="text">Clinically studied Neopuntia™ to support fat binding and elimination.</p></div><div class="bg-indigo-50 border border-indigo-200 rounded-xl p-3 text-xs text-indigo-800"><p data-variable="solution.highlight_2" data-variable-type="text">L-carnitine &amp; valerian root for metabolism and sleep support.</p></div></div></div><div class="grid sm:grid-cols-2 gap-4 text-sm text-gray-700"><div class="space-y-1"><p data-variable="solution.feature_label_1" data-variable-type="label" class="font-semibold">Daily use</p><p data-variable="solution.feature_text_1" data-variable-type="text">Take 2 capsules with water around 30 minutes before bedtime.</p></div><div class="space-y-1"><p data-variable="solution.feature_label_2" data-variable-type="label" class="font-semibold">Ideal for</p><p data-variable="solution.feature_text_2" data-variable-type="text">Anyone wanting to target evening calorie build-up &amp; improve sleep quality.</p></div></div></div></div></section><!-- PRODUCT INFO ACCORDION SIMPLIFIED BLOCK --><section id="product-info" class="py-10 sm:py-12 bg-white border-t border-b border-slate-100"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200"><h2 data-variable="product_info.section_title" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-4">
+              Informacije o izdelku +
+            </h2><div class="space-y-3 text-sm sm:text-base text-gray-700"><p data-variable="product_info.ingredients" data-variable-type="text">Ingredients (per 1 capsule): Neopuntia™ (pure Opuntia ficus-indica powder) 500 mg, capsule (hydroxypropyl methylcellulose), L-carnitine tartrate 150 mg, valerian root extract 100 mg, niacin (vitamin B3) 8 mg, vitamin B6 0.7 mg.</p><p data-variable="product_info.directions" data-variable-type="text">DIRECTIONS: Take 2 capsules daily with a glass of water, 30 minutes before bedtime.</p></div></div></div></section><!-- INGREDIENTS DETAILED SECTION --><section id="ingredients-detailed" class="py-12 sm:py-16 bg-slate-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="ingredients_detailed.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
+            NIGHTTIME BURN - INGREDIENTS
+          </h2><div class="space-y-6"><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><h3 data-variable="ingredients_detailed.ingredient_1_name" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                NEOPUNTIA™
+              </h3><p data-variable="ingredients_detailed.ingredient_1_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-2">
+                Neopuntia™ is an extract derived from Opuntia ficus-indica, a cactus native to the Sahara. Clinical studies confirm its effectiveness in supporting weight management:
+              </p><ul class="list-disc pl-5 space-y-1 text-sm sm:text-base text-gray-800 mb-2"><li data-variable="ingredients_detailed.ingredient_1_benefit_1" data-variable-type="list_item">Reduces fat absorption – binds up to 28% of dietary fat*</li><li data-variable="ingredients_detailed.ingredient_1_benefit_2" data-variable-type="list_item">Increases fat excretion by up to 27%*</li><li data-variable="ingredients_detailed.ingredient_1_benefit_3" data-variable-type="list_item">Supports healthy cholesterol and blood lipid levels*</li></ul><p data-variable="ingredients_detailed.ingredient_1_disclaimer" data-variable-type="text" class="text-[11px] text-gray-500">
+                *Based on clinical research. Individual results may vary.
+              </p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><h3 data-variable="ingredients_detailed.ingredient_2_name" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                L-CARNITINE
+              </h3><p data-variable="ingredients_detailed.ingredient_2_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-2">
+                L-carnitine is an amino acid derivative that plays a key role in fat metabolism and energy production.
+              </p><ul class="list-disc pl-5 space-y-1 text-sm sm:text-base text-gray-800 mb-2"><li data-variable="ingredients_detailed.ingredient_2_benefit_1" data-variable-type="list_item">Enhances fat metabolism – accelerates the breakdown of long-chain fatty acids, especially during physical activity*</li><li data-variable="ingredients_detailed.ingredient_2_benefit_2" data-variable-type="list_item">Boosts energy levels – particularly beneficial during exercise and recovery*</li><li data-variable="ingredients_detailed.ingredient_2_benefit_3" data-variable-type="list_item">Supports cardiovascular health – helps maintain normal heart function*</li></ul><p data-variable="ingredients_detailed.ingredient_2_disclaimer" data-variable-type="text" class="text-[11px] text-gray-500">
+                *Based on clinical research. Individual results may vary.
+              </p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><h3 data-variable="ingredients_detailed.ingredient_3_name" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                VALERIAN ROOT
+              </h3><p data-variable="ingredients_detailed.ingredient_3_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-2">
+                Valerian root (Valeriana officinalis) is traditionally known for its calming effects. It promotes deeper, more restful sleep – essential for metabolic health and overall wellbeing. Although primarily used for its relaxation benefits, it also supports weight management indirectly – poor sleep is linked to weight gain and disrupted appetite regulation.
+              </p><ul class="list-disc pl-5 space-y-1 text-sm sm:text-base text-gray-800 mb-2"><li data-variable="ingredients_detailed.ingredient_3_benefit_1" data-variable-type="list_item">Promotes restful sleep – essential for recovery and wellbeing*</li><li data-variable="ingredients_detailed.ingredient_3_benefit_2" data-variable-type="list_item">Reduces stress and anxiety – helping to prevent emotional eating*</li><li data-variable="ingredients_detailed.ingredient_3_benefit_3" data-variable-type="list_item">Supports a healthy appetite and metabolism through improved sleep quality*</li></ul><p data-variable="ingredients_detailed.ingredient_3_disclaimer" data-variable-type="text" class="text-[11px] text-gray-500">
+                *Based on clinical research. Individual results may vary.
+              </p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><h3 data-variable="ingredients_detailed.ingredient_4_name" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                NIACIN (Vitamin B3)
+              </h3><p data-variable="ingredients_detailed.ingredient_4_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Vitamin B3 or niacin boosts metabolism by helping to convert food into energy efficiently and improving circulation. It also plays a key role in cholesterol regulation, supporting a healthier metabolism, which promotes a more efficient fat-burning process and contributes to overall wellbeing.
+              </p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><h3 data-variable="ingredients_detailed.ingredient_5_name" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                VITAMIN B6
+              </h3><p data-variable="ingredients_detailed.ingredient_5_description" data-variable-type="text" class="text-sm sm:text-base text-gray-700">
+                Vitamin B6 (pyridoxine) is essential for energy production and the metabolism of proteins and carbohydrates. It also plays a role in regulating hormones and mood, which can help manage emotional eating and reduce cravings for unhealthy snacks.
+              </p></div></div></div></section><!-- TIMELINE / HOW IT WORKS SECTION --><section id="timeline" class="py-12 sm:py-16 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="timeline.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
+            WHAT CAN YOU EXPECT IN YOUR FIRST MONTH OF TAKING NIGHTTIME BURN?
+          </h2><div class="space-y-5"><div class="flex flex-col sm:flex-row sm:items-start gap-3 bg-slate-50 border border-slate-200 rounded-2xl p-4"><div class="sm:w-32 flex-shrink-0"><p data-variable="step_1.number" data-variable-type="label" class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-semibold">Day 3–4</p></div><p data-variable="step_1.description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 flex-1">
+                Start noticing a boost in energy as the unique formula begins to kick-start your metabolism.
+              </p></div><div class="flex flex-col sm:flex-row sm:items-start gap-3 bg-slate-50 border border-slate-200 rounded-2xl p-4"><div class="sm:w-32 flex-shrink-0"><p data-variable="step_2.number" data-variable-type="label" class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-semibold">Day 7–11</p></div><p data-variable="step_2.description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 flex-1">
+                Cravings for snacks and sugary treats begin to ease as appetite becomes easier to manage.
+              </p></div><div class="flex flex-col sm:flex-row sm:items-start gap-3 bg-slate-50 border border-slate-200 rounded-2xl p-4"><div class="sm:w-32 flex-shrink-0"><p data-variable="step_3.number" data-variable-type="label" class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-semibold">Day 16–18</p></div><p data-variable="step_3.description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 flex-1">
+                Time to tighten your belt – you may already be down a notch! Keep going!
+              </p></div><div class="flex flex-col sm:flex-row sm:items-start gap-3 bg-slate-50 border border-slate-200 rounded-2xl p-4"><div class="sm:w-32 flex-shrink-0"><p data-variable="step_4.number" data-variable-type="label" class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-semibold">Day 19–28</p></div><p data-variable="step_4.description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 flex-1">
+                The weight is coming off steadily. You're seeing results on the scales – without extreme diets or exhausting routines.
+              </p></div></div></div></section><!-- DIFFERENTIATION SECTION --><section id="differentiation" class="py-12 sm:py-16 bg-slate-900 text-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="differentiation.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold mb-6 text-center">
+            WHAT MAKES NIGHTTIME BURN DIFFERENT FROM OTHER WEIGHT LOSS PRODUCTS?
+          </h2><div class="space-y-3 text-sm sm:text-base text-slate-100 mb-6"><p data-variable="differentiation.paragraph_1" data-variable-type="text">Not all weight loss solutions are created equal.</p><p data-variable="differentiation.paragraph_2" data-variable-type="text">Golden Tree NightTime Burn stands out because it targets metabolic syndrome – the key reason calories get trapped and stored as fat in the evening.</p><p data-variable="differentiation.paragraph_3" data-variable-type="text">By contrast, many weight loss products rely heavily on caffeine and throw in a mix of generic extracts without addressing the root cause.</p></div></div></section><!-- TESTIMONIALS SECTION --><section id="testimonials" class="py-12 sm:py-16 bg-slate-50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="testimonials.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 text-center">
+            What do customers say about their experience with NightTime Burn?
+          </h2><p data-variable="testimonials.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+            Real experiences from people using NightTime Burn as part of their evening routine.
+          </p><div class="grid md:grid-cols-2 gap-6 mb-8"><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><div class="flex items-center justify-between mb-3"><span data-variable="testimonial_1.rating" data-variable-type="label" class="text-amber-400 text-sm">★★★★★</span><span data-variable="testimonial_1.badge" data-variable-type="label" class="text-[11px] bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full">Verified user</span></div><p data-variable="testimonial_1.quote" data-variable-type="quote" class="text-sm sm:text-base text-gray-800 mb-4">
+                I never imagined I'd lose weight in my sleep, but NightTime Burn genuinely works! The pounds are coming off without me having to give up my favourite evening snacks.
+              </p><p data-variable="testimonial_1.name" data-variable-type="name" class="text-sm font-semibold text-gray-900">Emma L.</p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><div class="flex items-center justify-between mb-3"><span data-variable="testimonial_2.rating" data-variable-type="label" class="text-amber-400 text-sm">★★★★★</span><span data-variable="testimonial_2.badge" data-variable-type="label" class="text-[11px] bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full">Verified user</span></div><p data-variable="testimonial_2.quote" data-variable-type="quote" class="text-sm sm:text-base text-gray-800 mb-4">
+                I've been waking up feeling more rested and full of energy. Plus, I'm not getting those annoying hunger pangs throughout the day anymore.
+              </p><p data-variable="testimonial_2.name" data-variable-type="name" class="text-sm font-semibold text-gray-900">Michael T.</p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><div class="flex items-center justify-between mb-3"><span data-variable="testimonial_3.rating" data-variable-type="label" class="text-amber-400 text-sm">★★★★★</span><span data-variable="testimonial_3.badge" data-variable-type="label" class="text-[11px] bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full">Verified user</span></div><p data-variable="testimonial_3.quote" data-variable-type="quote" class="text-sm sm:text-base text-gray-800 mb-4">
+                I've lost more weight in a month with NightTime Burn than I ever did on a diet. I was sceptical at first, but I'm absolutely thrilled with the results!
+              </p><p data-variable="testimonial_3.name" data-variable-type="name" class="text-sm font-semibold text-gray-900">Sarah B.</p></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"><div class="flex items-center justify-between mb-3"><span data-variable="testimonial_4.rating" data-variable-type="label" class="text-amber-400 text-sm">★★★★★</span><span data-variable="testimonial_4.badge" data-variable-type="label" class="text-[11px] bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full">Verified user</span></div><p data-variable="testimonial_4.quote" data-variable-type="quote" class="text-sm sm:text-base text-gray-800 mb-4">
+                I'm really impressed – my sleep has improved loads and the weight is already coming off.
+              </p><p data-variable="testimonial_4.name" data-variable-type="name" class="text-sm font-semibold text-gray-900">Katie M.</p></div></div><div class="grid lg:grid-cols-5 gap-4 text-[11px] sm:text-xs text-gray-700"><div class="bg-white rounded-xl p-3 border border-slate-200 text-center"><p data-variable="testimonials.stat_1" data-variable-type="text">85% of customers say their metabolism improved and they burned fat more efficiently overnight</p></div><div class="bg-white rounded-xl p-3 border border-slate-200 text-center"><p data-variable="testimonials.stat_2" data-variable-type="text">89% report waking up with more energy</p></div><div class="bg-white rounded-xl p-3 border border-slate-200 text-center"><p data-variable="testimonials.stat_3" data-variable-type="text">91% noticed a significant improvement in sleep quality</p></div><div class="bg-white rounded-xl p-3 border border-slate-200 text-center"><p data-variable="testimonials.stat_4" data-variable-type="text">88% experienced fewer cravings for sugary and fatty foods</p></div><div class="bg-white rounded-xl p-3 border border-slate-200 text-center"><p data-variable="testimonials.stat_5" data-variable-type="text">90% say NightTime Burn has helped them maintain their ideal weight and body shape over time</p></div></div></div></section><!-- GUARANTEE SECTION --><section id="guarantee" class="py-12 sm:py-16 bg-emerald-50"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="guarantee.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 text-center">
+            Order NightTime Burn today and experience powerful results – 100% risk-free!
+          </h2><div class="bg-white rounded-2xl p-6 sm:p-8 border border-emerald-200 shadow-sm"><h3 data-variable="guarantee.title" data-variable-type="heading" class="text-lg sm:text-xl font-semibold text-emerald-800 mb-3 text-center">
+              YOUR ORDER IS PROTECTED BY A 60-DAY MONEY-BACK GUARANTEE.
+            </h3><p data-variable="guarantee.intro" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-2 text-center">
+              We want you to feel confident about trying NightTime Burn.
+            </p><p data-variable="guarantee.description" data-variable-type="text" class="text-sm sm:text-base text-gray-700 mb-5 text-center">
+              That's why your purchase is backed by our 60-day guarantee – so you can test it without any worry it won't deliver results.
+            </p><div class="space-y-3 text-sm sm:text-base text-gray-700"><h4 data-variable="guarantee.how_it_works_title" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-1">
+                How does it work?
+              </h4><p data-variable="guarantee.how_it_works_paragraph_1" data-variable-type="text">Our unique formula needs time to deliver its full effect – typically around one month of consistent use.</p><p data-variable="guarantee.how_it_works_paragraph_2" data-variable-type="text">Not impressed with the results? We'll give you a full refund.</p><p data-variable="guarantee.how_it_works_paragraph_3" data-variable-type="text">If you're not satisfied with NightTime Burn after 60 days of regular and proper use, we'll give you your money back. Simple as that.</p><p data-variable="guarantee.how_it_works_paragraph_4" data-variable-type="text">If you're not completely convinced, simply email us at info@gogoldentree.com. Our team will provide further assistance and, if needed, arrange a full refund.</p><p data-variable="guarantee.how_it_works_paragraph_5" data-variable-type="text">We genuinely believe that ordering Golden Tree NightTime Burn is one of the smartest choices you can make for your health and wellbeing.</p></div></div></div></section><!-- SOCIAL PROOF / SOCIAL MEDIA SECTION --><section id="social-proof" class="py-12 sm:py-16 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="social.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+            Real buzz around NightTime Burn on social media:
+          </h2><div class="grid md:grid-cols-3 gap-4 text-xs sm:text-sm text-gray-800"><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_1" data-variable-type="quote">I didn't think it would work until I stepped on the scales tonight. I've lost a few pounds without even trying. This stuff is brilliant!</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_2" data-variable-type="quote">I wake up bursting with energy, and when my jeans feel loose, I can't help but smile. Who knew sleeping could help you lose weight?</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_3" data-variable-type="quote">Three weeks in and the difference isn't just in the mirror. My cravings for greasy foods are gone and I feel lighter overall.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_4" data-variable-type="quote">It's been a month now and even my friends have noticed. The compliments keep coming and I've never felt better.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_5" data-variable-type="quote">Just when I thought nothing would shift the weight, I found NightTime Burn. The inches are melting away and I'm thrilled.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_6" data-variable-type="quote">Who would have thought you could burn fat while sleeping? Turns out, you can! I'm living proof – absolutely buzzing with the results.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_7" data-variable-type="quote">I was sceptical at first, but now I'm convinced. I've squeezed back into my old clothes and my energy levels are through the roof.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_8" data-variable-type="quote">It's become a must in my evening routine. Easy, effective, and the results speak for themselves.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_9" data-variable-type="quote">I'd been searching for something that works without overhauling my entire lifestyle – and this is it!</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_10" data-variable-type="quote">It's honestly amazing how something so simple can make such a difference.</p></div><div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p data-variable="social.post_11" data-variable-type="quote">The capsules do work, but I'm also being mindful with my meals and staying active. That said, they've definitely given me that extra push I needed.</p></div></div></div></section><!-- PRICING SECTION --><section id="pricing" class="py-12 sm:py-16 bg-slate-900 text-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="pricing.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold mb-3 text-center">
+            Choose Your NightTime Burn Package
+          </h2><p data-variable="pricing.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-slate-200 mb-10 text-center max-w-3xl mx-auto">
+            For best results, we recommend at least one month of consistent use. Save more with multi-bottle options.
+          </p><div class="grid lg:grid-cols-3 gap-6 lg:gap-8"><!-- 1 Bottle --><div class="bg-slate-800 rounded-2xl p-6 border border-slate-600 flex flex-col"><div class="mb-4 text-center"><span data-variable="pricing_1.package_name" data-variable-type="heading" class="text-xs font-semibold tracking-wide uppercase text-slate-200">1 Bottle</span><p data-variable="pricing_1.duration" data-variable-type="label" class="text-sm text-slate-300">15-day supply</p></div><div class="text-center mb-4"><p data-variable="pricing_1.price" data-variable-type="price" class="text-3xl font-extrabold">€XX.XX</p><p data-variable="pricing_1.original_price" data-variable-type="price" class="text-xs text-slate-400 line-through">€YY.YY</p><p data-variable="pricing_1.savings_text" data-variable-type="label" class="text-xs text-emerald-300 mt-1">Introductory price</p></div><ul class="text-xs sm:text-sm text-slate-100 space-y-1.5 mb-5 flex-1"><li data-variable="pricing_1.feature_1" data-variable-type="list_item">Ideal for first-time users</li><li data-variable="pricing_1.feature_2" data-variable-type="list_item">Supports overnight fat metabolism</li></ul><a href="#" class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 rounded-md text-sm font-semibold mt-auto"><span data-variable="pricing_1.cta_text" data-variable-type="button">Add 1 Bottle to Cart</span></a></div><!-- 3 Bottles - Most Popular --><div class="bg-slate-800 rounded-2xl p-6 border-2 border-emerald-400 shadow-xl relative flex flex-col"><div class="absolute -top-3 right-4 bg-emerald-400 text-slate-900 px-3 py-1 rounded-full text-[11px] font-semibold"><span data-variable="pricing_2.badge" data-variable-type="label">Most Popular</span></div><div class="mb-4 text-center"><span data-variable="pricing_2.package_name" data-variable-type="heading" class="text-xs font-semibold tracking-wide uppercase text-slate-200">3 Bottles</span><p data-variable="pricing_2.duration" data-variable-type="label" class="text-sm text-slate-300">45-day supply</p></div><div class="text-center mb-4"><p data-variable="pricing_2.price" data-variable-type="price" class="text-3xl font-extrabold">€XX.XX</p><p data-variable="pricing_2.original_price" data-variable-type="price" class="text-xs text-slate-400 line-through">€YY.YY</p><p data-variable="pricing_2.savings_text" data-variable-type="label" class="text-xs text-emerald-300 mt-1">Best value per bottle</p></div><ul class="text-xs sm:text-sm text-slate-100 space-y-1.5 mb-5 flex-1"><li data-variable="pricing_2.feature_1" data-variable-type="list_item">Recommended for full 1-month transformation</li><li data-variable="pricing_2.feature_2" data-variable-type="list_item">Maximises results &amp; savings</li></ul><a href="#" class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 rounded-md text-sm font-semibold mt-auto"><span data-variable="pricing_2.cta_text" data-variable-type="button">Add 3 Bottles to Cart</span></a></div><!-- 6 Bottles --><div class="bg-slate-800 rounded-2xl p-6 border border-slate-600 flex flex-col"><div class="mb-4 text-center"><span data-variable="pricing_3.package_name" data-variable-type="heading" class="text-xs font-semibold tracking-wide uppercase text-slate-200">6 Bottles</span><p data-variable="pricing_3.duration" data-variable-type="label" class="text-sm text-slate-300">90-day supply</p></div><div class="text-center mb-4"><p data-variable="pricing_3.price" data-variable-type="price" class="text-3xl font-extrabold">€XX.XX</p><p data-variable="pricing_3.original_price" data-variable-type="price" class="text-xs text-slate-400 line-through">€YY.YY</p><p data-variable="pricing_3.savings_text" data-variable-type="label" class="text-xs text-emerald-300 mt-1">Maximum savings</p></div><ul class="text-xs sm:text-sm text-slate-100 space-y-1.5 mb-5 flex-1"><li data-variable="pricing_3.feature_1" data-variable-type="list_item">Ideal for long-term weight management</li><li data-variable="pricing_3.feature_2" data-variable-type="list_item">Ensures uninterrupted results</li></ul><a href="#" class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 rounded-md text-sm font-semibold mt-auto"><span data-variable="pricing_3.cta_text" data-variable-type="button">Add 6 Bottles to Cart</span></a></div></div></div></section><!-- FAQ SECTION --><section id="faq" class="py-12 sm:py-16 bg-slate-50"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="faq.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
+            FREQUENTLY ASKED QUESTIONS
+          </h2><div class="space-y-4"><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_1.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">How does NightTime Burn work?</h3><p data-variable="faq_1.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">Our bodies absorb most fat during the night. NightTime Burn harnesses the clinically proven power of Neopuntia™, a natural extract from the Sahara cactus. This unique Sahara cactus extract acts like a calorie bypass, helping the body eliminate excess fat instead of storing it around the belly, hips and thighs.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_2.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">What ingredients does NightTime Burn contain?</h3><p data-variable="faq_2.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">NightTime Burn is made with three carefully selected natural ingredients that work together to promote fat metabolism and restful sleep:
+
+Neopuntia™ (Opuntia ficus-indica) – Clinically shown to reduce fat absorption by 28%, increase fat excretion by 27%, and support healthy blood lipid levels.*
+
+L-carnitine: An amino acid derivative that plays a key role in energy production and fat metabolism.
+
+Valerian root: Known for its calming effect and support for restful sleep. Better sleep is linked to healthier metabolism and balanced appetite.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_3.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">What if the product doesn't meet my expectations?</h3><p data-variable="faq_3.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">Every NightTime Burn order is covered by our 60-day money-back guarantee. If you're not satisfied for any reason, simply return the product – even if you've used it all – and we'll refund your purchase. Trying it is 100% risk-free.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_4.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">Will I be charged anything after ordering NightTime Burn?</h3><p data-variable="faq_4.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">No. This is a one-time purchase – there are no hidden fees or automatic subscriptions. You'll only receive what you order.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_5.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">Can I take NightTime Burn alongside other food supplements?</h3><p data-variable="faq_5.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">Yes. NightTime Burn can be safely taken with most other supplements and is easy to incorporate into your daily routine.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_6.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">Is the product made in Europe?</h3><p data-variable="faq_6.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">Yes, all Golden Tree products are manufactured in the EU to the highest quality and safety standards.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_7.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">Can I use NightTime Burn if I have a medical condition?</h3><p data-variable="faq_7.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">The ingredients are natural and generally well tolerated. However, if you have a medical condition or are taking prescription medication, it's always best to check with your GP first. You can take the bottle with you to your appointment so your doctor can check the ingredient list. We do not recommend NightTime Burn if you are pregnant, breastfeeding or under 18.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_8.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">How should I take NightTime Burn?</h3><p data-variable="faq_8.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">For best results, take 2 capsules daily with a glass of water, around 30 minutes before bedtime.</p></div><div class="bg-white rounded-2xl p-5 border border-slate-200"><h3 data-variable="faq_9.question" data-variable-type="heading" class="text-base sm:text-lg font-semibold text-gray-900 mb-2">How long does one bottle of NightTime Burn last?</h3><p data-variable="faq_9.answer" data-variable-type="text" class="text-sm sm:text-base text-gray-700">One bottle contains 30 capsules – a 15-day supply when taken as directed.</p></div></div></div></section><!-- QUALITY STANDARDS SECTION --><section id="quality-standards" class="py-12 sm:py-16 bg-white border-t border-b border-slate-100"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"><h2 data-variable="quality.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+            The finest ingredients, produced to the highest standards.
+          </h2><div class="space-y-3 text-sm sm:text-base text-gray-700 text-center max-w-3xl mx-auto"><p data-variable="quality.paragraph_1" data-variable-type="text">Every product you find in the Golden Tree online shop has been carefully developed by our team of experts using the latest scientific research.</p><p data-variable="quality.paragraph_2" data-variable-type="text">The ingredients in our products are rigorously tested in independent laboratories. Some ingredients are even patented, which guarantees the highest possible quality and efficacy.</p><p data-variable="quality.paragraph_3" data-variable-type="text">Our food supplements are manufactured in a state-of-the-art facility that ensures a sterile and technologically advanced production process – meeting the strictest EU standards.</p></div></div></section><!-- FINAL CTA SECTION --><section id="final-cta" class="py-12 sm:py-16 bg-slate-900 text-white"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><h2 data-variable="final_cta.headline" data-variable-type="heading" class="text-2xl sm:text-3xl font-bold mb-4">
+            Ready to burn fat while you sleep?
+          </h2><p data-variable="final_cta.description" data-variable-type="text" class="text-sm sm:text-base text-slate-100 mb-6">
+            NightTime Burn targets metabolic syndrome, helps your body handle evening calories more effectively, and supports deeper, more restorative sleep.
+          </p><a href="#pricing" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-md font-semibold shadow-lg mb-3"><span data-variable="final_cta.button_text" data-variable-type="button">Choose Your NightTime Burn Package</span></a><p data-variable="final_cta.guarantee_text" data-variable-type="text" class="text-[11px] sm:text-xs text-slate-300">
+            Backed by a 60-day money-back guarantee. Try it at home, completely risk-free.
+          </p></div></section></main><!-- FOOTER --><footer class="bg-slate-950 text-slate-300 py-6"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3"><div class="text-center sm:text-left"><p data-variable="footer.company_name" data-variable-type="name" class="text-sm font-semibold">Golden Tree</p><p data-variable="footer.tagline" data-variable-type="text" class="text-xs text-slate-400">Targeted supplements for better health, sleep and metabolism.</p></div><div class="flex items-center gap-4 text-xs text-slate-400"><a href="#" class="hover:text-white"><span data-variable="footer.link_1_text" data-variable-type="link">Terms &amp; Conditions</span></a><a href="#" class="hover:text-white"><span data-variable="footer.link_2_text" data-variable-type="link">Privacy Policy</span></a></div><p data-variable="footer.copyright" data-variable-type="text" class="text-[11px] text-slate-500 text-center sm:text-right">
+          © 2024 Golden Tree. All rights reserved.
+        </p></div></footer></div></body></html>
+</body>
+</html>
