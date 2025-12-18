@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP - TEST</title>
+  <style>
+* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}body.gjs-outlines-active [data-variable]{outline-offset:-2px;position:relative;outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;}body.gjs-outlines-active [data-variable]::before{content:"${" attr(data-variable) "}";position:absolute;top:-22px;left:0px;background-color:rgb(97, 218, 251);background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-attachment:scroll;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box;color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;text-wrap-mode:nowrap;white-space-collapse:collapse;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}body.gjs-outlines-active [data-variable]{outline-offset:-2px;position:relative;outline-color:rgba(97, 218, 251, 0.8) !important;outline-style:dashed !important;outline-width:2px !important;}body.gjs-outlines-active [data-variable]::before{content:'${'attr(data-variable)'}';position:absolute;top:-22px;left:0px;background-image:initial;background-position-x:initial;background-position-y:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;background-color:rgb(97, 218, 251);color:rgb(26, 26, 26);padding-top:3px;padding-right:8px;padding-bottom:3px;padding-left:8px;font-size:11px;font-family:"Courier New", monospace;font-weight:bold;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;z-index:10000;pointer-events:none;white-space-collapse:collapse;text-wrap-mode:nowrap;box-shadow:rgba(0, 0, 0, 0.3) 0px 2px 4px;line-height:1;display:block;}@layer theme{:root, :host{--font-sans:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;--color-red-50:oklch(97.1% 0.013 17.38);--color-red-100:oklch(93.6% 0.032 17.717);--color-red-200:oklch(88.5% 0.062 18.334);--color-red-500:oklch(63.7% 0.237 25.331);--color-red-600:oklch(57.7% 0.245 27.325);--color-red-700:oklch(50.5% 0.213 27.518);--color-red-900:oklch(39.6% 0.141 25.723);--color-amber-50:oklch(98.7% 0.022 95.277);--color-amber-100:oklch(96.2% 0.059 95.617);--color-amber-300:oklch(87.9% 0.169 91.605);--color-amber-500:oklch(76.9% 0.188 70.08);--color-amber-700:oklch(55.5% 0.163 48.998);--color-emerald-50:oklch(97.9% 0.021 166.113);--color-emerald-200:oklch(90.5% 0.093 164.15);--color-emerald-300:oklch(84.5% 0.143 164.978);--color-emerald-400:oklch(76.5% 0.177 163.223);--color-emerald-500:oklch(69.6% 0.17 162.48);--color-emerald-600:oklch(59.6% 0.145 163.225);--color-emerald-700:oklch(50.8% 0.118 165.612);--color-sky-50:oklch(97.7% 0.013 236.62);--color-sky-100:oklch(95.1% 0.026 236.824);--color-sky-500:oklch(68.5% 0.169 237.323);--color-sky-700:oklch(50% 0.134 242.749);--color-indigo-50:oklch(96.2% 0.018 272.314);--color-indigo-500:oklch(58.5% 0.233 277.117);--color-indigo-700:oklch(45.7% 0.24 277.023);--color-rose-50:oklch(96.9% 0.015 12.422);--color-rose-100:oklch(94.1% 0.03 12.58);--color-rose-500:oklch(64.5% 0.246 16.439);--color-rose-600:oklch(58.6% 0.253 17.585);--color-slate-50:oklch(98.4% 0.003 247.858);--color-slate-100:oklch(96.8% 0.007 247.896);--color-slate-200:oklch(92.9% 0.013 255.508);--color-slate-300:oklch(86.9% 0.022 252.894);--color-slate-400:oklch(70.4% 0.04 256.788);--color-slate-500:oklch(55.4% 0.046 257.417);--color-slate-600:oklch(44.6% 0.043 257.281);--color-slate-700:oklch(37.2% 0.044 257.287);--color-slate-800:oklch(27.9% 0.041 260.031);--color-slate-900:oklch(20.8% 0.042 265.755);--color-slate-950:oklch(12.9% 0.042 264.695);--color-white:#fff;--spacing:0.25rem;--container-md:28rem;--container-3xl:48rem;--container-4xl:56rem;--container-6xl:72rem;--container-7xl:80rem;--text-xs:0.75rem;--text-xs--line-height:calc(1 / 0.75);--text-sm:0.875rem;--text-sm--line-height:calc(1.25 / 0.875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2 / 1.5);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-5xl:3rem;--text-5xl--line-height:1;--text-6xl:3.75rem;--text-6xl--line-height:1;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--tracking-wide:0.025em;--leading-tight:1.25;--radius-xl:0.75rem;--radius-2xl:1rem;--radius-3xl:1.5rem;--blur-xl:24px;--default-transition-duration:150ms;--default-transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);}}@layer base{*, ::after, ::before, ::backdrop, ::file-selector-button{box-sizing:border-box;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top-width:0px;border-right-width:0px;border-bottom-width:0px;border-left-width:0px;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:initial;border-right-color:initial;border-bottom-color:initial;border-left-color:initial;border-image-source:initial;border-image-slice:initial;border-image-width:initial;border-image-outset:initial;border-image-repeat:initial;}html, :host{line-height:1.5;text-size-adjust:100%;tab-size:4;font-family:var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings, normal);font-variation-settings:var(--default-font-variation-settings, normal);-webkit-tap-highlight-color:transparent;}hr{height:0px;color:inherit;border-top-width:1px;}abbr:where([title]){text-decoration-line:underline;text-decoration-thickness:initial;text-decoration-style:dotted;text-decoration-color:initial;}h1, h2, h3, h4, h5, h6{font-size:inherit;font-weight:inherit;}a{color:inherit;text-decoration-line:inherit;text-decoration-thickness:inherit;text-decoration-style:inherit;text-decoration-color:inherit;}b, strong{font-weight:bolder;}code, kbd, samp, pre{font-family:var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings, normal);font-variation-settings:var(--default-mono-font-variation-settings, normal);font-size:1em;}small{font-size:80%;}sub, sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sub{bottom:-0.25em;}sup{top:-0.5em;}table{text-indent:0px;border-top-color:inherit;border-right-color:inherit;border-bottom-color:inherit;border-left-color:inherit;border-collapse:collapse;}progress{vertical-align:baseline;}summary{display:list-item;}ol, ul, menu{list-style-position:initial;list-style-image:initial;list-style-type:none;}img, svg, video, canvas, audio, iframe, embed, object{display:block;vertical-align:middle;}img, video{max-width:100%;height:auto;}button, input, select, optgroup, textarea, ::file-selector-button{font-style:inherit;font-variant-ligatures:inherit;font-variant-caps:inherit;font-variant-numeric:inherit;font-variant-east-asian:inherit;font-variant-alternates:inherit;font-variant-position:inherit;font-variant-emoji:inherit;font-weight:inherit;font-stretch:inherit;font-size:inherit;line-height:inherit;font-family:inherit;font-optical-sizing:inherit;font-size-adjust:inherit;font-kerning:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;background-color:transparent;opacity:1;}:where(select:is([multiple], [size])) optgroup{font-weight:bolder;}:where(select:is([multiple], [size])) optgroup option{padding-inline-start:20px;}::file-selector-button{margin-inline-end:4px;}::placeholder{opacity:1;}::placeholder{color:currentcolor;}textarea{resize:vertical;}::-webkit-search-decoration{appearance:none;}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit;}::-webkit-datetime-edit{display:inline-flex;}::-webkit-datetime-edit-fields-wrapper{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;}::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field{padding-block-start:0px;padding-block-end:0px;}button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button{appearance:button;}::-webkit-inner-spin-button, ::-webkit-outer-spin-button{height:auto;}[hidden]:where(:not([hidden="until-found"])){display:none !important;}}@layer utilities{.absolute{position:absolute;}.relative{position:relative;}.-top-3{top:calc(var(--spacing) * -3);}.right-5{right:calc(var(--spacing) * 5);}.order-1{order:1;}.order-2{order:2;}.mx-auto{margin-inline-start:auto;margin-inline-end:auto;}.mt-1{margin-top:calc(var(--spacing) * 1);}.mt-2{margin-top:calc(var(--spacing) * 2);}.mt-6{margin-top:calc(var(--spacing) * 6);}.mt-\[2px\]{margin-top:2px;}.mt-auto{margin-top:auto;}.mb-1{margin-bottom:calc(var(--spacing) * 1);}.mb-2{margin-bottom:calc(var(--spacing) * 2);}.mb-3{margin-bottom:calc(var(--spacing) * 3);}.mb-4{margin-bottom:calc(var(--spacing) * 4);}.mb-5{margin-bottom:calc(var(--spacing) * 5);}.mb-6{margin-bottom:calc(var(--spacing) * 6);}.mb-10{margin-bottom:calc(var(--spacing) * 10);}.flex{display:flex;}.grid{display:grid;}.hidden{display:none;}.inline-block{display:inline-block;}.inline-flex{display:inline-flex;}.h-4{height:calc(var(--spacing) * 4);}.h-9{height:calc(var(--spacing) * 9);}.h-10{height:calc(var(--spacing) * 10);}.h-11{height:calc(var(--spacing) * 11);}.h-56{height:calc(var(--spacing) * 56);}.h-60{height:calc(var(--spacing) * 60);}.h-full{height:100%;}.min-h-screen{min-height:100vh;}.w-9{width:calc(var(--spacing) * 9);}.w-10{width:calc(var(--spacing) * 10);}.w-11{width:calc(var(--spacing) * 11);}.w-full{width:100%;}.w-px{width:1px;}.max-w-3xl{max-width:var(--container-3xl);}.max-w-4xl{max-width:var(--container-4xl);}.max-w-6xl{max-width:var(--container-6xl);}.max-w-7xl{max-width:var(--container-7xl);}.max-w-md{max-width:var(--container-md);}.flex-1{flex-grow:1;flex-shrink:1;flex-basis:0%;}.grid-cols-2{grid-template-columns:repeat(2, minmax(0px, 1fr));}.flex-col{flex-direction:column;}.flex-wrap{flex-wrap:wrap;}.items-baseline{align-items:baseline;}.items-center{align-items:center;}.items-start{align-items:flex-start;}.justify-between{justify-content:space-between;}.justify-center{justify-content:center;}.rounded-full{border-top-left-radius:calc(infinity * 1px);border-top-right-radius:calc(infinity * 1px);border-bottom-right-radius:calc(infinity * 1px);border-bottom-left-radius:calc(infinity * 1px);}.border{border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;}.border-2{border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;}.border-emerald-400\/40{border-top-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 40%, transparent);border-right-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 40%, transparent);border-bottom-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 40%, transparent);border-left-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 40%, transparent);}.border-emerald-400\/60{border-top-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 60%, transparent);border-right-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 60%, transparent);border-bottom-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 60%, transparent);border-left-color:color-mix(in srgb, oklch(0.765 0.177 163.223) 60%, transparent);}.bg-amber-50{background-color:var(--color-amber-50);}.bg-amber-100{background-color:var(--color-amber-100);}.bg-emerald-300{background-color:var(--color-emerald-300);}.bg-emerald-400{background-color:var(--color-emerald-400);}.bg-emerald-500{background-color:var(--color-emerald-500);}.bg-emerald-500\/15{background-color:color-mix(in srgb, oklch(0.696 0.17 162.48) 15%, transparent);}.bg-emerald-500\/40{background-color:color-mix(in srgb, oklch(0.696 0.17 162.48) 40%, transparent);}.bg-rose-50{background-color:var(--color-rose-50);}.bg-rose-100{background-color:var(--color-rose-100);}.bg-sky-50{background-color:var(--color-sky-50);}.bg-sky-100{background-color:var(--color-sky-100);}.bg-slate-50{background-color:var(--color-slate-50);}.bg-slate-600{background-color:var(--color-slate-600);}.bg-slate-700\/70{background-color:color-mix(in srgb, oklch(0.372 0.044 257.287) 70%, transparent);}.bg-slate-800{background-color:var(--color-slate-800);}.bg-slate-800\/80{background-color:color-mix(in srgb, oklch(0.279 0.041 260.031) 80%, transparent);}.bg-slate-800\/90{background-color:color-mix(in srgb, oklch(0.279 0.041 260.031) 90%, transparent);}.bg-slate-900{background-color:var(--color-slate-900);}.bg-slate-900\/50{background-color:color-mix(in srgb, oklch(0.208 0.042 265.755), transparent);}.bg-slate-900\/60{background-color:color-mix(in srgb, oklch(0.208 0.042 265.755) 60%, transparent);}.bg-slate-900\/80{background-color:color-mix(in srgb, oklch(0.208 0.042 265.755) 80%, transparent);}.bg-slate-950{background-color:var(--color-slate-950);}.bg-white{background-color:var(--color-white);}.bg-gradient-to-b{--tw-gradient-position:to bottom in oklab;background-image:linear-gradient(var(--tw-gradient-stops));}.from-slate-900{--tw-gradient-from:var(--color-slate-900);--tw-gradient-stops:var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));}.to-slate-800{--tw-gradient-to:var(--color-slate-800);--tw-gradient-stops:var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));}.to-slate-950{--tw-gradient-to:var(--color-slate-950);--tw-gradient-stops:var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));}.object-cover{object-fit:cover;}.py-\[2px\]{padding-block-start:2px;padding-block-end:2px;}.text-center{text-align:center;}.text-right{text-align:right;}.font-sans{font-family:var(--font-sans);}.text-2xl{font-size:var(--text-2xl);line-height:var(--tw-leading, var(--text-2xl--line-height));}.text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading, var(--text-3xl--line-height));}.text-base{font-size:var(--text-base);line-height:var(--tw-leading, var(--text-base--line-height));}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading, var(--text-lg--line-height));}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading, var(--text-sm--line-height));}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading, var(--text-xl--line-height));}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading, var(--text-xs--line-height));}.text-\[10px\]{font-size:10px;}.text-\[11px\]{font-size:11px;}.leading-tight{--tw-leading:var(--leading-tight);line-height:var(--leading-tight);}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);}.font-extrabold{--tw-font-weight:var(--font-weight-extrabold);font-weight:var(--font-weight-extrabold);}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold);}.tracking-wide{--tw-tracking:var(--tracking-wide);letter-spacing:var(--tracking-wide);}.text-amber-300{color:var(--color-amber-300);}.text-amber-500{color:var(--color-amber-500);}.text-amber-700{color:var(--color-amber-700);}.text-emerald-200{color:var(--color-emerald-200);}.text-emerald-300{color:var(--color-emerald-300);}.text-emerald-400{color:var(--color-emerald-400);}.text-rose-500{color:var(--color-rose-500);}.text-rose-600{color:var(--color-rose-600);}.text-sky-500{color:var(--color-sky-500);}.text-sky-700{color:var(--color-sky-700);}.text-slate-100{color:var(--color-slate-100);}.text-slate-200{color:var(--color-slate-200);}.text-slate-200\/80{color:color-mix(in srgb, oklch(0.929 0.013 255.508) 80%, transparent);}.text-slate-300{color:var(--color-slate-300);}.text-slate-300\/90{color:color-mix(in srgb, oklch(0.869 0.022 252.894) 90%, transparent);}.text-slate-400{color:var(--color-slate-400);}.text-slate-500{color:var(--color-slate-500);}.text-slate-600{color:var(--color-slate-600);}.text-slate-900{color:var(--color-slate-900);}.text-white{color:var(--color-white);}.uppercase{text-transform:uppercase;}.italic{font-style:italic;}.line-through{text-decoration-line:line-through;}.underline-offset-2{text-underline-offset:2px;}.opacity-70{opacity:0.7;}.opacity-80{opacity:0.8;}.shadow-2xl{--tw-shadow:0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-lg{--tw-shadow:0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-md{--tw-shadow:0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-xl{--tw-shadow:0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}.shadow-emerald-400\/40{--tw-shadow-color:color-mix(in srgb, oklch(76.5% 0.177 163.223) 40%, transparent);}.shadow-emerald-500\/30{--tw-shadow-color:color-mix(in srgb, oklch(69.6% 0.17 162.48) 30%, transparent);}.shadow-emerald-500\/40{--tw-shadow-color:color-mix(in srgb, oklch(69.6% 0.17 162.48) 40%, transparent);}.blur-xl{--tw-blur:blur(var(--blur-xl));filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);}.transition-colors{transition-property:color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;transition-timing-function:var(--tw-ease, var(--default-transition-timing-function));transition-duration:var(--tw-duration, var(--default-transition-duration));}}@layer properties{*, ::before, ::after, ::backdrop{--tw-space-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;}}
+/*! tailwindcss v4.1.7 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-red-50: oklch(97.1% 0.013 17.38);
+    --color-red-100: oklch(93.6% 0.032 17.717);
+    --color-red-200: oklch(88.5% 0.062 18.334);
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-red-900: oklch(39.6% 0.141 25.723);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-100: oklch(96.2% 0.059 95.617);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-green-50: oklch(98.2% 0.018 155.826);
+    --color-green-100: oklch(96.2% 0.044 156.743);
+    --color-green-200: oklch(92.5% 0.084 155.995);
+    --color-green-500: oklch(72.3% 0.219 149.579);
+    --color-green-600: oklch(62.7% 0.194 149.214);
+    --color-green-700: oklch(52.7% 0.154 150.069);
+    --color-green-900: oklch(39.3% 0.095 152.535);
+    --color-emerald-200: oklch(90.5% 0.093 164.15);
+    --color-emerald-300: oklch(84.5% 0.143 164.978);
+    --color-emerald-400: oklch(76.5% 0.177 163.223);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-sky-50: oklch(97.7% 0.013 236.62);
+    --color-sky-100: oklch(95.1% 0.026 236.824);
+    --color-sky-500: oklch(68.5% 0.169 237.323);
+    --color-sky-700: oklch(50% 0.134 242.749);
+    --color-rose-50: oklch(96.9% 0.015 12.422);
+    --color-rose-100: oklch(94.1% 0.03 12.58);
+    --color-rose-500: oklch(64.5% 0.246 16.439);
+    --color-rose-600: oklch(58.6% 0.253 17.585);
+    --color-slate-50: oklch(98.4% 0.003 247.858);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-6xl: 72rem;
+    --container-7xl: 80rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --tracking-wide: 0.025em;
+    --leading-tight: 1.25;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --blur-xl: 24px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .-inset-1 {
+    inset: calc(var(--spacing) * -1);
+  }
+  .-top-3 {
+    top: calc(var(--spacing) * -3);
+  }
+  .right-5 {
+    right: calc(var(--spacing) * 5);
+  }
+  .order-1 {
+    order: 1;
+  }
+  .order-2 {
+    order: 2;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-\[2px\] {
+    margin-top: 2px;
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-9 {
+    height: calc(var(--spacing) * 9);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
+  .h-56 {
+    height: calc(var(--spacing) * 56);
+  }
+  .h-60 {
+    height: calc(var(--spacing) * 60);
+  }
+  .h-full {
+    height: 100%;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+  .w-11 {
+    width: calc(var(--spacing) * 11);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .w-px {
+    width: 1px;
+  }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
+  .max-w-6xl {
+    max-width: var(--container-6xl);
+  }
+  .max-w-7xl {
+    max-width: var(--container-7xl);
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-baseline {
+    align-items: baseline;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-emerald-400 {
+    border-color: var(--color-emerald-400);
+  }
+  .border-emerald-400\/40 {
+    border-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-emerald-400) 40%, transparent);
+    }
+  }
+  .border-emerald-400\/60 {
+    border-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-emerald-400) 60%, transparent);
+    }
+  }
+  .border-green-200 {
+    border-color: var(--color-green-200);
+  }
+  .border-red-200 {
+    border-color: var(--color-red-200);
+  }
+  .border-slate-200 {
+    border-color: var(--color-slate-200);
+  }
+  .border-slate-700 {
+    border-color: var(--color-slate-700);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-amber-100 {
+    background-color: var(--color-amber-100);
+  }
+  .bg-emerald-300 {
+    background-color: var(--color-emerald-300);
+  }
+  .bg-emerald-400 {
+    background-color: var(--color-emerald-400);
+  }
+  .bg-emerald-500 {
+    background-color: var(--color-emerald-500);
+  }
+  .bg-emerald-500\/15 {
+    background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 15%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-500) 15%, transparent);
+    }
+  }
+  .bg-emerald-500\/40 {
+    background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-500) 40%, transparent);
+    }
+  }
+  .bg-green-50 {
+    background-color: var(--color-green-50);
+  }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+  .bg-red-100 {
+    background-color: var(--color-red-100);
+  }
+  .bg-rose-50 {
+    background-color: var(--color-rose-50);
+  }
+  .bg-rose-100 {
+    background-color: var(--color-rose-100);
+  }
+  .bg-sky-50 {
+    background-color: var(--color-sky-50);
+  }
+  .bg-sky-100 {
+    background-color: var(--color-sky-100);
+  }
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
+  .bg-slate-600 {
+    background-color: var(--color-slate-600);
+  }
+  .bg-slate-700\/70 {
+    background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-700) 70%, transparent);
+    }
+  }
+  .bg-slate-800 {
+    background-color: var(--color-slate-800);
+  }
+  .bg-slate-800\/80 {
+    background-color: color-mix(in srgb, oklch(27.9% 0.041 260.031) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-800) 80%, transparent);
+    }
+  }
+  .bg-slate-800\/90 {
+    background-color: color-mix(in srgb, oklch(27.9% 0.041 260.031) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-800) 90%, transparent);
+    }
+  }
+  .bg-slate-900 {
+    background-color: var(--color-slate-900);
+  }
+  .bg-slate-900\/50 {
+    background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-900) 50%, transparent);
+    }
+  }
+  .bg-slate-900\/60 {
+    background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-900) 60%, transparent);
+    }
+  }
+  .bg-slate-900\/80 {
+    background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-900) 80%, transparent);
+    }
+  }
+  .bg-slate-950 {
+    background-color: var(--color-slate-950);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-gradient-to-b {
+    --tw-gradient-position: to bottom in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-slate-900 {
+    --tw-gradient-from: var(--color-slate-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-slate-800 {
+    --tw-gradient-to: var(--color-slate-800);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-slate-950 {
+    --tw-gradient-to: var(--color-slate-950);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
+  .py-\[2px\] {
+    padding-block: 2px;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .text-amber-300 {
+    color: var(--color-amber-300);
+  }
+  .text-amber-500 {
+    color: var(--color-amber-500);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-emerald-200 {
+    color: var(--color-emerald-200);
+  }
+  .text-emerald-300 {
+    color: var(--color-emerald-300);
+  }
+  .text-emerald-400 {
+    color: var(--color-emerald-400);
+  }
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+  .text-green-700 {
+    color: var(--color-green-700);
+  }
+  .text-green-900 {
+    color: var(--color-green-900);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
+  }
+  .text-red-900 {
+    color: var(--color-red-900);
+  }
+  .text-rose-500 {
+    color: var(--color-rose-500);
+  }
+  .text-rose-600 {
+    color: var(--color-rose-600);
+  }
+  .text-sky-500 {
+    color: var(--color-sky-500);
+  }
+  .text-sky-700 {
+    color: var(--color-sky-700);
+  }
+  .text-slate-100 {
+    color: var(--color-slate-100);
+  }
+  .text-slate-200 {
+    color: var(--color-slate-200);
+  }
+  .text-slate-200\/80 {
+    color: color-mix(in srgb, oklch(92.9% 0.013 255.508) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-slate-200) 80%, transparent);
+    }
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-300\/90 {
+    color: color-mix(in srgb, oklch(86.9% 0.022 252.894) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-slate-300) 90%, transparent);
+    }
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-900 {
+    color: var(--color-slate-900);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .underline-offset-2 {
+    text-underline-offset: 2px;
+  }
+  .opacity-70 {
+    opacity: 70%;
+  }
+  .opacity-80 {
+    opacity: 80%;
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xl {
+    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-emerald-400\/40 {
+    --tw-shadow-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-emerald-400) 40%, transparent) var(--tw-shadow-alpha), transparent);
+    }
+  }
+  .shadow-emerald-500\/30 {
+    --tw-shadow-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-emerald-500) 30%, transparent) var(--tw-shadow-alpha), transparent);
+    }
+  }
+  .shadow-emerald-500\/40 {
+    --tw-shadow-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-emerald-500) 40%, transparent) var(--tw-shadow-alpha), transparent);
+    }
+  }
+  .blur-xl {
+    --tw-blur: blur(var(--blur-xl));
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .hover\:bg-emerald-300 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-emerald-300);
+      }
+    }
+  }
+  .hover\:bg-emerald-400 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-emerald-400);
+      }
+    }
+  }
+  .hover\:bg-emerald-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-emerald-600);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .sm\:block {
+    @media (width >= 40rem) {
+      display: block;
+    }
+  }
+  .sm\:h-72 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 72);
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:p-5 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 5);
+    }
+  }
+  .sm\:p-6 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:py-14 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 14);
+    }
+  }
+  .sm\:py-16 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-4xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .sm\:text-base {
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .sm\:text-sm {
+    @media (width >= 40rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
+  .sm\:text-xs {
+    @media (width >= 40rem) {
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 48rem) {
+      align-items: center;
+    }
+  }
+  .md\:items-end {
+    @media (width >= 48rem) {
+      align-items: flex-end;
+    }
+  }
+  .md\:justify-between {
+    @media (width >= 48rem) {
+      justify-content: space-between;
+    }
+  }
+  .lg\:order-1 {
+    @media (width >= 64rem) {
+      order: 1;
+    }
+  }
+  .lg\:order-2 {
+    @media (width >= 64rem) {
+      order: 2;
+    }
+  }
+  .lg\:grid-cols-2 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-4 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .lg\:justify-end {
+    @media (width >= 64rem) {
+      justify-content: flex-end;
+    }
+  }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:py-16 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+  .lg\:text-4xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .lg\:text-5xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .lg\:text-xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .xl\:text-6xl {
+    @media (width >= 80rem) {
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+    }
+  }
+}
+
+  </style>
+</head>
+<body>
+<html><head></head><body><div class="min-h-screen flex flex-col font-sans"><!-- HERO SECTION --><section class="bg-gradient-to-b from-slate-900 to-slate-800 text-white py-10 lg:py-16"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-10 items-center"><div><div class="inline-flex items-center bg-slate-800/80 border border-emerald-400/60 rounded-full px-4 py-1 mb-5"><span data-variable="trust.badge_1" data-variable-type="label" class="text-emerald-300 text-xs font-semibold tracking-wide">ÚJDONSÁG • ENERGIATAKARÉKOS KERTI FÉNY</span></div><h1 data-variable="hero.headline" data-variable-type="heading" class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-4">Varázsolj hangulatos kertet kábelek és villanyszámla nélkül<br class="hidden sm:block"> kábelek és villanyszámla nélkül
+            </h1><p data-variable="hero.subheadline" data-variable-type="text" class="text-base sm:text-lg lg:text-xl text-slate-200 mb-5">Napelemes, mozgásérzékelős kerti lámpák, amelyek minden estét különlegessé tesznek – szerelés, áram és karbantartás nélkül.</p><ul class="space-y-2 mb-6"><li class="flex items-start gap-2"><span data-variable="hero.bullet_1_icon" data-variable-type="label" class="mt-1 text-emerald-400 text-lg">✓</span><p data-variable="hero.bullet_1_text" data-variable-type="text" class="text-sm sm:text-base text-slate-200">Automatikus felkapcsolás sötétedéskor – csak szúrd a földbe, és készen is vagy.</p></li><li class="flex items-start gap-2"><span data-variable="hero.bullet_2_icon" data-variable-type="label" class="mt-1 text-emerald-400 text-lg">✓</span><p data-variable="hero.bullet_2_text" data-variable-type="text" class="text-sm sm:text-base text-slate-200">Napelemes működés – nincs plusz villanyszámla, nincs kábelezés.</p></li><li class="flex items-start gap-2"><span data-variable="hero.bullet_3_icon" data-variable-type="label" class="mt-1 text-emerald-400 text-lg">✓</span><p data-variable="hero.bullet_3_text" data-variable-type="text" class="text-sm sm:text-base text-slate-200">Időjárásálló kialakítás – egész évben a helyükön maradhatnak.</p></li></ul><div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-4"><a href="#pricing" class="inline-flex justify-center items-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-7 py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg shadow-emerald-500/40 transition-colors"><span data-variable="hero.cta_text" data-variable-type="button">Vásárolj most kedvezménnyel</span></a><div class="flex items-center gap-2 text-xs sm:text-sm text-slate-200/80"><span data-variable="trust.guarantee" data-variable-type="text">30 napos pénzvisszafizetési garancia</span></div></div><div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300/90"><div class="flex items-center gap-2"><span data-variable="trust.rating" data-variable-type="text" class="font-semibold">★ 4,8 / 5</span><span data-variable="trust.review_count" data-variable-type="text">Több mint 3 200 vásárlói értékelés</span></div><div class="hidden sm:block h-4 w-px bg-slate-600"></div><div class="flex items-center gap-2"><span data-variable="trust.customer_count" data-variable-type="text">12 000+ elégedett kerttulajdonos</span></div></div></div><div class="relative flex justify-center lg:justify-end"><div class="relative max-w-md w-full"><div class="absolute -inset-1 bg-emerald-500/40 rounded-3xl blur-xl opacity-80"></div><div class="relative bg-slate-900/80 border border-emerald-400/40 rounded-3xl p-4 sm:p-6 flex flex-col gap-4 shadow-2xl"><img data-variable="hero.main_image" data-variable-type="image" src="Napelemes kerti lámpák éjszakai hangulatos kertben" alt="Napelemes kerti lámpák éjszakai hangulatos kertben" class="w-full h-56 sm:h-72 object-cover rounded-2xl"><div class="flex justify-between items-center text-xs sm:text-sm text-slate-100"><div><p data-variable="hero.image_caption_title" data-variable-type="text" class="font-semibold">Hangulatfény 10 másodperc alatt</p><p data-variable="hero.image_caption_subtitle" data-variable-type="text" class="text-slate-300 text-xs">Csak leszúrod, és már világít is – kábelek nélkül.</p></div><div class="text-right"><p data-variable="hero.discount_badge" data-variable-type="label" class="inline-flex items-center bg-emerald-400 text-slate-900 font-bold px-2 py-1 rounded-full text-[11px]">-52% MA</p><p data-variable="hero.stock_text" data-variable-type="text" class="text-amber-300 text-[11px] mt-1">Készleten: 37 szett</p></div></div></div></div></div></div></div></section><!-- PROBLEM SECTION --><section class="py-12 sm:py-14 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-3xl mx-auto text-center mb-10"><h2 data-variable="problems.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-slate-900">Ismerős ez a látvány a kertedben estefelé?</h2><p data-variable="problems.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-slate-600">A legtöbb kertben a fény az utolsó szempont – pedig ezen múlik, hogy egy udvar hétköznapi vagy mesés hangulatú.</p></div><div class="grid md:grid-cols-3 gap-6"><div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center justify-between mb-4"><div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center"><span data-variable="problem_1.icon" data-variable-type="label" class="text-rose-500 text-xl">!</span></div><span data-variable="problem_1.badge" data-variable-type="label" class="text-[11px] font-semibold text-rose-600 bg-rose-50 px-2 py-1 rounded-full">BIZTONSÁGI KOCKÁZAT</span></div><h3 data-variable="problem_1.title" data-variable-type="heading" class="text-lg font-bold mb-2 text-slate-900">Sötét ösvények, botladozás, balesetveszély</h3><p data-variable="problem_1.description" data-variable-type="text" class="text-sm text-slate-600 mb-3 flex-1">A gyenge vagy hiányzó kerti világítás miatt könnyű megbotlani a lépcsőknél, szegélynél vagy a gyerekek játékain. Egy rossz lépés, és máris kész a baj.</p><p data-variable="problem_1.bottom_text" data-variable-type="text" class="text-xs text-slate-500">A vendégek is bizonytalanul mozognak a sötét udvarban.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center justify-between mb-4"><div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center"><span data-variable="problem_2.icon" data-variable-type="label" class="text-amber-500 text-xl">⚡</span></div><span data-variable="problem_2.badge" data-variable-type="label" class="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-1 rounded-full">DRÁGA MEGOLDÁSOK</span></div><h3 data-variable="problem_2.title" data-variable-type="heading" class="text-lg font-bold mb-2 text-slate-900">Költséges villanyszerelés és magas számlák</h3><p data-variable="problem_2.description" data-variable-type="text" class="text-sm text-slate-600 mb-3 flex-1">Hagyományos kerti lámpákhoz villanyszerelő, kábelezés, földmunka kell – és havonta fizetheted az áramot, akkor is, ha alig használod őket.</p><p data-variable="problem_2.bottom_text" data-variable-type="text" class="text-xs text-slate-500">Az első árajánlat sokszor el is veszi az ember kedvét.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center justify-between mb-4"><div class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center"><span data-variable="problem_3.icon" data-variable-type="label" class="text-sky-500 text-xl">⛈</span></div><span data-variable="problem_3.badge" data-variable-type="label" class="text-[11px] font-semibold text-sky-700 bg-sky-50 px-2 py-1 rounded-full">IDŐIGÉNYES KARBANTARTÁS</span></div><h3 data-variable="problem_3.title" data-variable-type="heading" class="text-lg font-bold mb-2 text-slate-900">Rozsdásodó lámpák, tönkremenő izzók</h3><p data-variable="problem_3.description" data-variable-type="text" class="text-sm text-slate-600 mb-3 flex-1">Az olcsó kültéri lámpák hamar megadják magukat az esőnek, hónapok után már alig világítanak, a cseréjük pedig pénz és macera.</p><p data-variable="problem_3.bottom_text" data-variable-type="text" class="text-xs text-slate-500">Ahelyett, hogy élveznéd a kerted, állandóan javítgatsz.</p></div></div></div></section><!-- SOLUTION SECTION --><section class="py-12 sm:py-16 bg-slate-900 text-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-10 items-center"><div class="order-2 lg:order-1"><h2 data-variable="solution.headline" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4">Intelligens napelemes kerti lámpák, amelyek gondolkodnak helyetted</h2><p data-variable="solution.description" data-variable-type="text" class="text-sm sm:text-base text-slate-200 mb-4">A SmartGlow Solar Yard Lights modern napelemes technológiát és elegáns dizájnt kombinál, hogy a kerted biztonságosabb, látványosabb és élhetőbb legyen – anélkül, hogy egyetlen kapcsolót is fel kellene kapcsolnod.</p><ul class="space-y-2 mb-6 text-sm sm:text-base"><li class="flex gap-2"><span data-variable="solution.bullet_1_icon" data-variable-type="label" class="mt-1 text-emerald-400">✓</span><p data-variable="solution.bullet_1_text" data-variable-type="text" class="text-slate-100">Napközben feltölt, este automatikusan világít – nincs teendőd vele.</p></li><li class="flex gap-2"><span data-variable="solution.bullet_2_icon" data-variable-type="label" class="mt-1 text-emerald-400">✓</span><p data-variable="solution.bullet_2_text" data-variable-type="text" class="text-slate-100">Erős LED fényforrás, amely kiemeli az ösvényt, a növényeket és a teraszt.</p></li><li class="flex gap-2"><span data-variable="solution.bullet_3_icon" data-variable-type="label" class="mt-1 text-emerald-400">✓</span><p data-variable="solution.bullet_3_text" data-variable-type="text" class="text-slate-100">Időjárásálló, ütésálló burkolat – egész évben kint maradhat.</p></li></ul><div class="flex flex-col sm:flex-row sm:items-center gap-4"><a href="#pricing" class="inline-flex justify-center items-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-7 py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg shadow-emerald-500/40 transition-colors"><span data-variable="solution.cta_text" data-variable-type="button">Válaszd ki a szetted</span></a><p data-variable="solution.secondary_text" data-variable-type="text" class="text-xs sm:text-sm text-slate-300">Ingyenes szállítás 15 000 Ft felett • Utánvétes fizetés</p></div></div><div class="order-1 lg:order-2 flex justify-center"><div class="relative max-w-md w-full"><div class="absolute -inset-1 bg-emerald-500/40 rounded-3xl blur-xl opacity-70"></div><div class="relative bg-slate-800/90 border border-emerald-400/40 rounded-3xl p-5 flex flex-col gap-4 shadow-2xl"><img data-variable="solution.main_image" data-variable-type="image" src="Napelemes kerti lámpák modern kertben" alt="Napelemes kerti lámpák modern kertben" class="w-full h-60 sm:h-72 object-cover rounded-2xl"><div class="grid grid-cols-2 gap-3 text-xs sm:text-sm"><div class="bg-slate-900/60 rounded-xl p-3"><p data-variable="solution.card_1_title" data-variable-type="text" class="font-semibold text-emerald-300 mb-1">Nincs kábelezés</p><p data-variable="solution.card_1_text" data-variable-type="text" class="text-slate-200">Szúrd a földbe, csavard fel a fejet, és már kész is. 1 perc / lámpa.</p></div><div class="bg-slate-900/60 rounded-xl p-3"><p data-variable="solution.card_2_title" data-variable-type="text" class="font-semibold text-emerald-300 mb-1">Okos fényvezérlés</p><p data-variable="solution.card_2_text" data-variable-type="text" class="text-slate-200">Alkonyatkor bekapcsol, pirkadatkor kikapcsol – teljesen automatikus.</p></div></div><p data-variable="solution.note" data-variable-type="text" class="text-[11px] text-slate-300/90 text-center">Megjegyzés: a működéshez csak napi néhány óra napfény szükséges.</p></div></div></div></div></div></section><!-- BENEFITS SECTION --><section class="py-12 sm:py-16 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-3xl mx-auto text-center mb-10"><h2 data-variable="benefits.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-green-900">4 ok, amiért a afjasfkjuasfasdfsfSmartGlow Solar lámpák hamar a kedvenceid lesznek</h2><p data-variable="benefits.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-green-700">Úgy terveztük, hogy ne csak szépek legyenek, hanem valódi kényelmet, biztonságoasdffasdfasfast és megtakarítást adjanak.</p></div><div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="bg-green-50 border border-green-200 rounded-2xl p-5 flex flex-col h-full"><div class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4"><span data-variable="benefit_1.icon" data-variable-type="label" class="text-green-500 text-xl">💡</span></div><h3 data-variable="benefit_1.title" data-variable-type="heading" class="text-base sm:text-lg font-bold mb-2 text-green-900">Erős, mégis kellemes fény</h3><p data-variable="benefit_1.description" data-variable-type="text" class="text-sm text-green-700 mb-3 flex-1">A melegfehér LED fény nem vakít, mégis bőven elég, hogy biztonságosan közlekedjetek a kertben és az ösvényeken.</p><p data-variable="benefit_1.bottom_text" data-variable-type="text" class="text-xs text-green-600 font-semibold">Teraszhoz, járdához, virágágyás mellé is ideális.</p></div><div class="bg-green-50 border border-green-200 rounded-2xl p-5 flex flex-col h-full"><div class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4"><span data-variable="benefit_2.icon" data-variable-type="label" class="text-green-500 text-xl">☀️</span></div><h3 data-variable="benefit_2.title" data-variable-type="heading" class="text-base sm:text-lg font-bold mb-2 text-green-900">0 Ft plusz villanyszámla</h3><p data-variable="benefit_2.description" data-variable-type="text" class="text-sm text-green-700 mb-3 flex-1">Napelemes panelje nappal tölti a beépített akkumulátort, így este akár 8-10 órát is folyamatosan világít – áram nélkül.</p><p data-variable="benefit_2.bottom_text" data-variable-type="text" class="text-xs text-green-600 font-semibold">Egyszer fizetsz, utána évekig használod.</p></div><div class="bg-green-50 border border-green-200 rounded-2xl p-5 flex flex-col h-full"><div class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4"><span data-variable="benefit_3.icon" data-variable-type="label" class="text-green-500 text-xl">🛠</span></div><h3 data-variable="benefit_3.title" data-variable-type="heading" class="text-base sm:text-lg font-bold mb-2 text-green-900">Szerelés nélkül telepíthető</h3><p data-variable="benefit_3.description" data-variable-type="text" class="text-sm text-green-700 mb-3 flex-1">Nem kell villanyszerelő, nem kell ásni, nem kell falat fúrni. Bárki pillanatok alatt el tudja helyezni őket a kertben.</p><p data-variable="benefit_3.bottom_text" data-variable-type="text" class="text-xs text-green-600 font-semibold">Időseknek is könnyen kezelhető.</p></div><div class="bg-green-50 border border-green-200 rounded-2xl p-5 flex flex-col h-full"><div class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4"><span data-variable="benefit_4.icon" data-variable-type="label" class="text-green-500 text-xl">🌧</span></div><h3 data-variable="benefit_4.title" data-variable-type="heading" class="text-base sm:text-lg font-bold mb-2 text-green-900">Időjárásálló, tartós kivitel</h3><p data-variable="benefit_4.description" data-variable-type="text" class="text-sm text-green-700 mb-3 flex-1">Eső, hó, fagy, nyári forróság – IP65 védelemnek köszönhetően mindent bírnak, hosszú éveken át.</p><p data-variable="benefit_4.bottom_text" data-variable-type="text" class="text-xs text-green-600 font-semibold">Nem kell télen sem leszerelned őket.</p></div></div></div></section><!-- SOCIAL PROOF / TESTIMONIALS SECTION --><section class="py-12 sm:py-16 bg-slate-900 text-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10"><div><h2 data-variable="testimonials.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2">Ezt mondják, akik már fényt vittek a kertjükbe</h2><p data-variable="testimonials.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-slate-200">Valódi visszajelzések olyan családoktól, akik néhány lámpával teljesen megváltoztatták az udvar hangulatát.</p></div><div class="text-xs sm:text-sm text-slate-300"><p data-variable="testimonials.summary" data-variable-type="text">Átlagos értékelés: 4,8 / 5 • Ellenőrzött vásárlások</p></div></div><div class="grid md:grid-cols-3 gap-6"><div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center justify-between mb-3"><div class="flex items-center gap-3"><img data-variable="testimonial_1.avatar" data-variable-type="image" src="Vásárló portré" alt="Vásárló portré" class="w-10 h-10 rounded-full object-cover"><div><p data-variable="testimonial_1.name" data-variable-type="name" class="text-sm font-semibold">Kovács Andrea</p><p data-variable="testimonial_1.location" data-variable-type="address" class="text-[11px] text-slate-300">Győr</p></div></div><div class="text-right"><p data-variable="testimonial_1.rating" data-variable-type="text" class="text-amber-300 text-sm">★★★★★</p><span data-variable="testimonial_1.badge" data-variable-type="label" class="inline-block mt-1 text-[10px] px-2 py-[2px] rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/40">Ellenőrzött vásárlás</span></div></div><p data-variable="testimonial_1.quote" data-variable-type="quote" class="text-sm text-slate-100 italic mb-3">"Eddig mindig sötétben botladoztunk a hátsó udvarban. Most esténként kint ülünk a teraszon, mert egyszerűen gyönyörű lett a kert a lámpáktól. A férjem fél óra alatt az egészet felrakta."</p><p data-variable="testimonial_1.date" data-variable-type="date" class="text-[11px] text-slate-400 mt-auto">Értékelés dátuma: 2024. május 2.</p></div><div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center justify-between mb-3"><div class="flex items-center gap-3"><img data-variable="testimonial_2.avatar" data-variable-type="image" src="Vásárló portré" alt="Vásárló portré" class="w-10 h-10 rounded-full object-cover"><div><p data-variable="testimonial_2.name" data-variable-type="name" class="text-sm font-semibold">Szabó Gábor</p><p data-variable="testimonial_2.location" data-variable-type="address" class="text-[11px] text-slate-300">Budapest</p></div></div><div class="text-right"><p data-variable="testimonial_2.rating" data-variable-type="text" class="text-amber-300 text-sm">★★★★★</p><span data-variable="testimonial_2.badge" data-variable-type="label" class="inline-block mt-1 text-[10px] px-2 py-[2px] rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/40">Ellenőrzött vásárlás</span></div></div><p data-variable="testimonial_2.quote" data-variable-type="quote" class="text-sm text-slate-100 italic mb-3">"Nem akartam villanyszerelésre százezreket költeni. Ezeket a lámpákat csak leszúrtam a kocsibeálló mellé, és kész. Azóta este is biztonságosan tudunk parkolni, és meglepően erősen világítanak."</p><p data-variable="testimonial_2.date" data-variable-type="date" class="text-[11px] text-slate-400 mt-auto">Értékelés dátuma: 2024. április 18.</p></div><div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center justify-between mb-3"><div class="flex items-center gap-3"><img data-variable="testimonial_3.avatar" data-variable-type="image" src="Vásárló portré" alt="Vásárló portré" class="w-10 h-10 rounded-full object-cover"><div><p data-variable="testimonial_3.name" data-variable-type="name" class="text-sm font-semibold">Tóth László</p><p data-variable="testimonial_3.location" data-variable-type="address" class="text-[11px] text-slate-300">Pécs</p></div></div><div class="text-right"><p data-variable="testimonial_3.rating" data-variable-type="text" class="text-amber-300 text-sm">★★★★☆</p><span data-variable="testimonial_3.badge" data-variable-type="label" class="inline-block mt-1 text-[10px] px-2 py-[2px] rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/40">Ellenőrzött vásárlás</span></div></div><p data-variable="testimonial_3.quote" data-variable-type="quote" class="text-sm text-slate-100 italic mb-3">"Meglepően masszív darabok, nem gagyi műanyag. Egész télen kint hagytam őket, és tavasszal is ugyanúgy működnek. Plusz pont, hogy a gyerekeknek is tetszenek, mindig ők kapcsolgatnák – de nincs is mit kapcsolni."</p><p data-variable="testimonial_3.date" data-variable-type="date" class="text-[11px] text-slate-400 mt-auto">Értékelés dátuma: 2024. március 7.</p></div></div></div></section><!-- HOW IT WORKS SECTION --><section class="py-12 sm:py-16 bg-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-3xl mx-auto text-center mb-10"><h2 data-variable="how_it_works.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-slate-900">Így lesz 10 perc alatt hangulatos, biztonságos kerted</h2><p data-variable="how_it_works.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-slate-600">Nincs szerszám, nincs vezeték, nincs szakember – csak néhány egyszerű lépés, amit bárki meg tud csinálni.</p></div><div class="grid md:grid-cols-3 gap-6"><div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center font-bold text-sm"><span data-variable="step_1.number" data-variable-type="label">1</span></div><h3 data-variable="step_1.title" data-variable-type="heading" class="text-base sm:text-lg font-bold text-slate-900">Válaszd ki, hova szeretnéd a fényt</h3></div><p data-variable="step_1.description" data-variable-type="text" class="text-sm text-slate-600 mb-3 flex-1">Döntsd el, melyik ösvényt, teraszt, ágyást vagy kocsibeállót szeretnéd kiemelni. Tervezd meg a lámpák sorát – mintha csak dísztárgyakat helyeznél el.</p><p data-variable="step_1.note" data-variable-type="text" class="text-xs text-slate-500">Tipp: 1 lámpa kb. 1,5–2 métert világít be esztétikusan.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center font-bold text-sm"><span data-variable="step_2.number" data-variable-type="label">2</span></div><h3 data-variable="step_2.title" data-variable-type="heading" class="text-base sm:text-lg font-bold text-slate-900">Szúrd le, pattintsd a helyére, kész</h3></div><p data-variable="step_2.description" data-variable-type="text" class="text-sm text-slate-600 mb-3 flex-1">Állítsd össze a leszúrótüskét, szúrd a földbe, pattintsd rá a lámpafejet. Nem kell fúrni, csavarozni, falat vésni – tényleg bárki meg tudja csinálni.</p><p data-variable="step_2.note" data-variable-type="text" class="text-xs text-slate-500">Puha föld vagy kavicságy ideális, de virágládába is teheted.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col h-full"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center font-bold text-sm"><span data-variable="step_3.number" data-variable-type="label">3</span></div><h3 data-variable="step_3.title" data-variable-type="heading" class="text-base sm:text-lg font-bold text-slate-900">Hagyd, hogy a nap elvégezze a munkát</h3></div><p data-variable="step_3.description" data-variable-type="text" class="text-sm text-slate-600 mb-3 flex-1">A lámpák nappal feltöltődnek, estétől pirkadatig világítanak. Neked csak annyi dolgod marad, hogy élvezd a meghitt esti kertet.</p><p data-variable="step_3.note" data-variable-type="text" class="text-xs text-slate-500">Ha szeretnéd, egy mozdulattal ki is kapcsolhatod őket.</p></div></div></div></section><!-- PRICING SECTION --><section id="pricing" class="py-12 sm:py-16 bg-slate-900 text-white"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-3xl mx-auto text-center mb-10"><h2 data-variable="pricing.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3">Válaszd ki a kertedhez illő csomagot</h2><p data-variable="pricing.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-slate-200 mb-2">Minél több lámpát rendelsz, annál egységesebb és látványosabb lesz az összhatás – és annál nagyobb kedvezményt kapsz.</p><p data-variable="pricing.shipping_note" data-variable-type="text" class="text-xs sm:text-sm text-emerald-300">Ingyenes szállítás 2 vagy több csomag rendelése esetén • Utánvétes fizetés</p></div><div class="grid lg:grid-cols-3 gap-6"><!-- Pricing 1 --><div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col"><div class="mb-4 text-center"><span data-variable="pricing_1.package_name" data-variable-type="heading" class="inline-block text-xs font-bold tracking-wide uppercase text-slate-200 bg-slate-700/70 px-3 py-1 rounded-full mb-3">Kezdő csomag</span><p data-variable="pricing_1.duration" data-variable-type="label" class="text-xs text-slate-300 mb-1">4 darab SmartGlow Solar lámpa</p></div><div class="flex items-baseline justify-center gap-2 mb-2"><span data-variable="pricing_1.price" data-variable-type="price" class="text-3xl font-extrabold text-emerald-400">9 990 Ft</span><span data-variable="pricing_1.original_price" data-variable-type="price" class="text-xs text-slate-400 line-through">14 990 Ft</span></div><p data-variable="pricing_1.savings_text" data-variable-type="label" class="text-xs text-emerald-300 text-center mb-4">30% kedvezmény • Ideális kisebb kertekhez</p><ul class="space-y-2 text-xs sm:text-sm text-slate-100 mb-5 flex-1"><li class="flex gap-2"><span data-variable="pricing_1.feature_1_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_1.feature_1" data-variable-type="list_item">4 × napelemes LED lámpa leszúrótüskével</span></li><li class="flex gap-2"><span data-variable="pricing_1.feature_2_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_1.feature_2" data-variable-type="list_item">Melegfehér hangulatfény teraszhoz vagy bejárathoz</span></li><li class="flex gap-2"><span data-variable="pricing_1.feature_3_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_1.feature_3" data-variable-type="list_item">Akár 8 óra üzemidő egyetlen töltéssel</span></li></ul><a href="#" class="mt-auto inline-flex justify-center items-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-6 py-3 rounded-full text-sm font-semibold shadow-md shadow-emerald-500/40 transition-colors"><span data-variable="pricing_1.cta_text" data-variable-type="button">Ezt a csomagot kérem</span></a><p data-variable="pricing_1.stock_text" data-variable-type="text" class="text-[11px] text-slate-300 text-center mt-2">Készleten: 41 csomag</p></div><!-- Pricing 2 (Most Popular) --><div class="bg-slate-800 border-2 border-emerald-400 rounded-2xl p-5 flex flex-col relative shadow-xl shadow-emerald-500/30"><div class="absolute -top-3 right-5 bg-emerald-500 text-slate-900 text-[11px] px-3 py-1 rounded-full font-bold uppercase tracking-wide"><span data-variable="pricing_2.badge" data-variable-type="label">Legnépszerűbb</span></div><div class="mb-4 text-center mt-1"><span data-variable="pricing_2.package_name" data-variable-type="heading" class="inline-block text-xs font-bold tracking-wide uppercase text-slate-900 bg-emerald-300 px-3 py-1 rounded-full mb-3">Családi csomag</span><p data-variable="pricing_2.duration" data-variable-type="label" class="text-xs text-slate-200 mb-1">8 darab SmartGlow Solar lámpa</p></div><div class="flex items-baseline justify-center gap-2 mb-2"><span data-variable="pricing_2.price" data-variable-type="price" class="text-3xl font-extrabold text-emerald-300">17 990 Ft</span><span data-variable="pricing_2.original_price" data-variable-type="price" class="text-xs text-slate-400 line-through">29 980 Ft</span></div><p data-variable="pricing_2.savings_text" data-variable-type="label" class="text-xs text-emerald-200 text-center mb-4">40% kedvezmény • A legtöbb kerthez ez az ideális</p><ul class="space-y-2 text-xs sm:text-sm text-slate-100 mb-5 flex-1"><li class="flex gap-2"><span data-variable="pricing_2.feature_1_icon" data-variable-type="label" class="mt-[2px] text-emerald-300">✓</span><span data-variable="pricing_2.feature_1" data-variable-type="list_item">8 × napelemes LED lámpa leszúrótüskével</span></li><li class="flex gap-2"><span data-variable="pricing_2.feature_2_icon" data-variable-type="label" class="mt-[2px] text-emerald-300">✓</span><span data-variable="pricing_2.feature_2" data-variable-type="list_item">Tökéletes teljes kerti ösvény, kocsibeálló vagy terasz köré</span></li><li class="flex gap-2"><span data-variable="pricing_2.feature_3_icon" data-variable-type="label" class="mt-[2px] text-emerald-300">✓</span><span data-variable="pricing_2.feature_3" data-variable-type="list_item">+ Ingyenes házhozszállítás</span></li><li class="flex gap-2"><span data-variable="pricing_2.feature_4_icon" data-variable-type="label" class="mt-[2px] text-emerald-300">✓</span><span data-variable="pricing_2.feature_4" data-variable-type="list_item">30 napos pénzvisszafizetési garancia</span></li></ul><a href="#" class="mt-auto inline-flex justify-center items-center bg-emerald-400 hover:bg-emerald-300 text-slate-900 px-6 py-3 rounded-full text-sm font-semibold shadow-md shadow-emerald-400/40 transition-colors"><span data-variable="pricing_2.cta_text" data-variable-type="button">Legnépszerűbb csomag megrendelése</span></a><p data-variable="pricing_2.stock_text" data-variable-type="text" class="text-[11px] text-emerald-200 text-center mt-2">Ma már 26-an ezt választották</p></div><!-- Pricing 3 --><div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col"><div class="mb-4 text-center"><span data-variable="pricing_3.package_name" data-variable-type="heading" class="inline-block text-xs font-bold tracking-wide uppercase text-slate-200 bg-slate-700/70 px-3 py-1 rounded-full mb-3">Maxi csomag</span><p data-variable="pricing_3.duration" data-variable-type="label" class="text-xs text-slate-300 mb-1">12 darab SmartGlow Solar lámpa</p></div><div class="flex items-baseline justify-center gap-2 mb-2"><span data-variable="pricing_3.price" data-variable-type="price" class="text-3xl font-extrabold text-emerald-400">24 990 Ft</span><span data-variable="pricing_3.original_price" data-variable-type="price" class="text-xs text-slate-400 line-through">44 970 Ft</span></div><p data-variable="pricing_3.savings_text" data-variable-type="label" class="text-xs text-emerald-300 text-center mb-4">45% kedvezmény • Nagyobb kertekhez, nyaralókhoz</p><ul class="space-y-2 text-xs sm:text-sm text-slate-100 mb-5 flex-1"><li class="flex gap-2"><span data-variable="pricing_3.feature_1_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_3.feature_1" data-variable-type="list_item">12 × napelemes LED lámpa leszúrótüskével</span></li><li class="flex gap-2"><span data-variable="pricing_3.feature_2_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_3.feature_2" data-variable-type="list_item">Egységes fények a teljes előkertben és hátsó udvarban</span></li><li class="flex gap-2"><span data-variable="pricing_3.feature_3_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_3.feature_3" data-variable-type="list_item">+ Ingyenes házhozszállítás</span></li><li class="flex gap-2"><span data-variable="pricing_3.feature_4_icon" data-variable-type="label" class="mt-[2px] text-emerald-400">✓</span><span data-variable="pricing_3.feature_4" data-variable-type="list_item">+ Ajándék 2 év kiterjesztett garancia</span></li></ul><a href="#" class="mt-auto inline-flex justify-center items-center bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-6 py-3 rounded-full text-sm font-semibold shadow-md shadow-emerald-500/40 transition-colors"><span data-variable="pricing_3.cta_text" data-variable-type="button">Nagy kerthez választom</span></a><p data-variable="pricing_3.stock_text" data-variable-type="text" class="text-[11px] text-slate-300 text-center mt-2">Készleten: korlátozott mennyiség</p></div></div><p data-variable="pricing.disclaimer" data-variable-type="text" class="text-[11px] text-slate-300 text-center mt-6 max-w-3xl mx-auto">Az akció a készlet erejéig érvényes. Az árak tartalmazzák az ÁFÁ-t. Utánvétes fizetés esetén plusz kezelési költség kerül felszámításra a futárszolgálat díjszabása szerint.</p></div></section><!-- FAQ SECTION --><section class="py-12 sm:py-16 bg-white"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-10"><h2 data-variable="faq.section_title" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-slate-900">Gyakran ismételt kérdések</h2><p data-variable="faq.section_subtitle" data-variable-type="text" class="text-sm sm:text-base text-slate-600">Minden fontos tudnivaló a SmartGlow Solar lámpákról, hogy magabiztosan dönthess.</p></div><div class="space-y-4"><div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5"><h3 data-variable="faq_1.question" data-variable-type="heading" class="text-sm sm:text-base font-bold text-slate-900 mb-2">Mennyi ideig világítanak a lámpák egy feltöltéssel?</h3><p data-variable="faq_1.answer" data-variable-type="text" class="text-sm text-slate-600">Napi 6–8 óra napsütés mellett a lámpák átlagosan 8–10 órán keresztül világítanak. Borús napokon is működnek, ilyenkor a fényerő és az üzemidő rövidülhet, de a beépített akkumulátor energiatakarékosan használja a töltést.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5"><h3 data-variable="faq_2.question" data-variable-type="heading" class="text-sm sm:text-base font-bold text-slate-900 mb-2">Télre le kell szerelnem a lámpákat?</h3><p data-variable="faq_2.answer" data-variable-type="text" class="text-sm text-slate-600">Nem szükséges. A lámpák időjárásálló, IP65-ös védettséggel rendelkeznek, így esőnek, hónak és fagynak is ellenállnak. Ha szeretnéd, télen is a helyükön hagyhatod őket, legfeljebb rövidebb ideig fognak világítani a kevesebb napsütés miatt.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5"><h3 data-variable="faq_3.question" data-variable-type="heading" class="text-sm sm:text-base font-bold text-slate-900 mb-2">Kell-e hozzá villanyszerelő vagy külön kábelezés?</h3><p data-variable="faq_3.answer" data-variable-type="text" class="text-sm text-slate-600">Nem, a SmartGlow Solar lámpák teljesen önálló, napelemes egységek. Nem igényelnek hálózati áramot, így nincs szükség kábelre, kapcsolóra, biztosítékra vagy szakemberre. Egyszerűen összepattintod, leszúrod, és már használhatod is.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5"><h3 data-variable="faq_4.question" data-variable-type="heading" class="text-sm sm:text-base font-bold text-slate-900 mb-2">Mennyire erős a fény, lehet vele olvasni is?</h3><p data-variable="faq_4.answer" data-variable-type="text" class="text-sm text-slate-600">A lámpák fényereje úgy lett beállítva, hogy biztonságos közlekedést és hangulatos fényt biztosítsanak a kertben. Ösvények, lépcsők, ágyások megvilágítására tökéletesek, de olvasáshoz inkább célzott teraszvilágítást javaslunk.</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5"><h3 data-variable="faq_5.question" data-variable-type="heading" class="text-sm sm:text-base font-bold text-slate-900 mb-2">Hogyan működik a 30 napos pénzvisszafizetési garancia?</h3><p data-variable="faq_5.answer" data-variable-type="text" class="text-sm text-slate-600">Ha bármilyen okból nem vagy elégedett a SmartGlow Solar lámpákkal, a kézhezvételtől számított 30 napon belül jelezheted ügyfélszolgálatunknak, és visszaküldheted a terméket. Mi kérdés nélkül visszafizetjük a teljes vételárat (a szállítási feltételek az ÁSZF-ben találhatók).</p></div><div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5"><h3 data-variable="faq_6.question" data-variable-type="heading" class="text-sm sm:text-base font-bold text-slate-900 mb-2">Milyen fizetési és szállítási módok közül választhatok?</h3><p data-variable="faq_6.answer" data-variable-type="text" class="text-sm text-slate-600">Rendelésedet bankkártyával online vagy utánvéttel a futárnál is kifizetheted. A csomagot megbízható futárszolgálat szállítja házhoz 2–4 munkanapon belül. 2 vagy több csomag rendelése esetén a szállítás díját mi álljuk.</p></div></div></div></section><!-- FINAL CTA SECTION --><section class="py-12 sm:py-16 bg-gradient-to-b from-slate-900 to-slate-950 text-white"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><h2 data-variable="final_cta.headline" data-variable-type="heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3">Tedd varázslatossá a kerted már ma este</h2><p data-variable="final_cta.description" data-variable-type="text" class="text-sm sm:text-base text-slate-200 mb-5">Néhány egyszerűen telepíthető napelemes lámpával teljesen megváltoztathatod, hogyan érzed magad, amikor este hazaérsz. Rendeld meg most a SmartGlow Solar szettet, és élvezd a biztonságos, hangulatos fényt minden egyes este.</p><a href="#pricing" class="inline-flex justify-center items-center bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-3 rounded-full text-sm sm:text-base font-semibold shadow-xl shadow-emerald-500/40 transition-colors mb-3"><span data-variable="final_cta.button_text" data-variable-type="button">Igen, szeretném szebbé tenni a kertemet</span></a><p data-variable="final_cta.guarantee_text" data-variable-type="text" class="text-[11px] sm:text-xs text-slate-300 mb-4">Biztonságos rendelés • 30 napos pénzvisszafizetési garancia • Utánvétes fizetés</p><div class="flex flex-wrap justify-center gap-3 text-[11px] sm:text-xs text-slate-300"><span data-variable="final_cta.point_1" data-variable-type="label" class="px-3 py-1 rounded-full border border-slate-700 bg-slate-900/50">Gyors kiszállítás 2–4 munkanapon belül</span><span data-variable="final_cta.point_2" data-variable-type="label" class="px-3 py-1 rounded-full border border-slate-700 bg-slate-900/50">Magyar ügyfélszolgálat</span><span data-variable="final_cta.point_3" data-variable-type="label" class="px-3 py-1 rounded-full border border-slate-700 bg-slate-900/50">Több ezer elégedett kerttulajdonos</span></div></div></section><!-- FOOTER --><footer class="bg-slate-950 text-slate-300 py-8"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"><div><p data-variable="footer.company_name" data-variable-type="name" class="text-sm font-semibold text-white">SmartGlow Technologies Kft.</p><p data-variable="footer.tagline" data-variable-type="text" class="text-xs text-slate-400">Okos, energiatakarékos megoldások a mindennapokra</p></div><div class="flex flex-wrap items-center gap-4 text-[11px] sm:text-xs"><a href="#" class="text-slate-300 hover:text-white underline-offset-2 hover:underline"><span data-variable="footer.link_1_text" data-variable-type="link">ÁSZF</span></a><a href="#" class="text-slate-300 hover:text-white underline-offset-2 hover:underline"><span data-variable="footer.link_2_text" data-variable-type="link">Adatkezelési tájékoztató</span></a><a href="#" class="text-slate-300 hover:text-white underline-offset-2 hover:underline"><span data-variable="footer.link_3_text" data-variable-type="link">Impresszum</span></a></div><div class="text-[11px] text-slate-500"><p data-variable="footer.copyright" data-variable-type="text">© 2024 SmartGlow Technologies Kft. Minden jog fenntartva.</p></div></div></footer></div></body></html>
+</body>
+</html>
